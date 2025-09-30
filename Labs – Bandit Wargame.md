@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Image List</title>
-</head>
+  <meta charset="UTF-8"></head>
 <body>
   <h1>My Images</h1>
   <div class="gallery">
