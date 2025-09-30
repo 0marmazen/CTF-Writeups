@@ -3,25 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Image List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-    }
-    .gallery {
-      display: block;
-    }
-    .gallery img {
-      display: block;
-      width: 200px; /* تتحكم في حجم الصورة */
-      margin-bottom: 15px; /* مسافة بين الصور */
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      background: #fff;
-      padding: 5px;
-    }
-  </style>
 </head>
 <body>
   <h1>My Images</h1>
