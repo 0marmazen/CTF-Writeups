@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"></head>
 <body>
-  <h1>My Images</h1>
+  <h1>Labs answer</h1>
   <div class="gallery">
     <img src="./assets/0to1.png" alt="0to1"/>
     <img src="./assets/1to2.png" alt="1to2"/>
