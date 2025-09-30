@@ -1,4 +1,5 @@
-<p align="center">
+<!--- 
+ <p align="center">
   THM : RootMe<br>
   Difficulty : Easy<br>
   Room link : https://tryhackme.com/room/rrootme<br>
