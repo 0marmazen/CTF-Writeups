@@ -3,46 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bandit Walkthrough - Enhanced Writeup</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #222;
-    }
-    .level {
-      border: 1px solid #ddd;
-      background: #fff;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .level img {
-      max-width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
-    pre {
-      background: #272822;
-      color: #f8f8f2;
-      padding: 10px;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
 <body>
   <h1>Bandit Walkthrough - Enhanced Writeup</h1>
