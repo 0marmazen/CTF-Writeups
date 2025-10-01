@@ -2,67 +2,178 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bandit Walkthrough - Enhanced Writeup</title>
+  <title>Bandit Walkthrough - Levels 0 to 13</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    .level {
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .level img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bandit Walkthrough - Enhanced Writeup</h1>
+  <h1>Bandit Walkthrough - Levels 0 to 13</h1>
 
   <h2>Introduction</h2>
   <p>
-    <a href="https://overthewire.org/wargames/bandit/">Bandit</a> هي لعبة تعليمية من OverTheWire تساعد المبتدئين في تعلم أوامر Linux الأساسية وأساسيات أمن المعلومات. الفكرة أنك تنتقل من مستوى لآخر عبر إيجاد كلمة مرور مخفية باستخدام أوامر مختلفة مثل <code>ssh</code>, <code>ls</code>, <code>cat</code>, <code>find</code>, <code>grep</code>, وغيرها.
+    <a href="https://overthewire.org/wargames/bandit/">Bandit</a> is a beginner-friendly wargame from OverTheWire. It teaches the fundamentals of Linux command-line usage and basic security concepts. The objective is to find passwords hidden on the system to progress from one level to the next.
   </p>
 
-  <p>في هذا الدليل، لكل مستوى ستجد: الوصف، الأوامر، والنتيجة (مع صورة توضيحية).</p>
-
-  <!-- Example structure repeated for each level -->
+  <p>Each level below contains: a description, the key commands, a screenshot, and a link to the official page.</p>
 
   <div class="level">
     <h3>Level 0 → Level 1</h3>
-    <p>المطلوب: تسجيل الدخول عبر SSH.</p>
+    <p>Task: Log in via SSH.</p>
     <pre><code>ssh bandit0@bandit.labs.overthewire.org -p 2220</code></pre>
     <img src="./assets/0to1.png" alt="0to1" />
-    <p><a href="https://overthewire.org/wargames/bandit/bandit0.html">رابط المستوى الرسمي</a></p>
+    <p><a href="https://overthewire.org/wargames/bandit/bandit0.html">Official page</a></p>
   </div>
 
   <div class="level">
     <h3>Level 1 → Level 2</h3>
-    <p>المطلوب: قراءة محتوى ملف <code>readme</code> في مجلد المنزل.</p>
+    <p>Task: Read the content of the <code>readme</code> file in the home directory.</p>
     <pre><code>ls
 cat readme</code></pre>
     <img src="./assets/1to2.png" alt="1to2" />
-    <p><a href="https://overthewire.org/wargames/bandit/bandit1.html">رابط المستوى الرسمي</a></p>
+    <p><a href="https://overthewire.org/wargames/bandit/bandit1.html">Official page</a></p>
   </div>
 
   <div class="level">
     <h3>Level 2 → Level 3</h3>
-    <p>المطلوب: التعامل مع ملف اسمه "-".</p>
+    <p>Task: Handle a file named "-".</p>
     <pre><code>ls
 cat ./-</code></pre>
     <img src="./assets/2to3.png" alt="2to3" />
-    <p><a href="https://overthewire.org/wargames/bandit/bandit2.html">رابط المستوى الرسمي</a></p>
+    <p><a href="https://overthewire.org/wargames/bandit/bandit2.html">Official page</a></p>
   </div>
 
-  <!-- ... كرر نفس النمط لبقية المستويات مع شرح وأوامر وصورة ... -->
+  <div class="level">
+    <h3>Level 3 → Level 4</h3>
+    <p>Task: Work with filenames containing spaces.</p>
+    <pre><code>ls
+cat "spaces in this filename"</code></pre>
+    <img src="./assets/3to4.png" alt="3to4" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit3.html">Official page</a></p>
+  </div>
 
   <div class="level">
-    <h3>Level 28 → Level 29</h3>
-    <p>آخر المستويات في الملف الحالي.</p>
-    <img src="./assets/28to29.png" alt="28to29" />
-    <p><a href="https://overthewire.org/wargames/bandit/bandit28.html">رابط المستوى الرسمي</a></p>
+    <h3>Level 4 → Level 5</h3>
+    <p>Task: Find and read hidden files.</p>
+    <pre><code>ls -a inhere
+cat inhere/.hidden</code></pre>
+    <img src="./assets/4to5.png" alt="4to5" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit4.html">Official page</a></p>
+  </div>
+
+  <div class="level">
+    <h3>Level 5 → Level 6</h3>
+    <p>Task: Identify human-readable files among many.</p>
+    <pre><code>file ./*
+cat ./-file07</code></pre>
+    <img src="./assets/5to6.png" alt="5to6" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit5.html">Official page</a></p>
+  </div>
+
+  <div class="level">
+    <h3>Level 6 → Level 7</h3>
+    <p>Task: Find a file based on size and non-executable property.</p>
+    <pre><code>find . -type f -size 1033c ! -executable</code></pre>
+    <img src="./assets/6to7.png" alt="6to7" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit6.html">Official page</a></p>
+  </div>
+
+  <div class="level">
+    <h3>Level 7 → Level 8</h3>
+    <p>Task: Find a file based on ownership (user and group).</p>
+    <pre><code>find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null</code></pre>
+    <img src="./assets/7to8.png" alt="7to8" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit7.html">Official page</a></p>
+  </div>
+
+  <div class="level">
+    <h3>Level 8 → Level 9</h3>
+    <p>Task: Use <code>grep</code> to search within a large file.</p>
+    <pre><code>grep millionth data.txt</code></pre>
+    <img src="./assets/8to9.png" alt="8to9" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit8.html">Official page</a></p>
+  </div>
+
+  <div class="level">
+    <h3>Level 9 → Level 10</h3>
+    <p>Task: Find the unique line among many duplicates.</p>
+    <pre><code>sort data.txt | uniq -u</code></pre>
+    <img src="./assets/9to10.png" alt="9to10" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit9.html">Official page</a></p>
+  </div>
+
+  <div class="level">
+    <h3>Level 10 → Level 11</h3>
+    <p>Task: Extract human-readable strings from a binary file.</p>
+    <pre><code>strings data.txt | grep ===</code></pre>
+    <img src="./assets/10to11.png" alt="10to11" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit10.html">Official page</a></p>
+  </div>
+
+  <div class="level">
+    <h3>Level 11 → Level 12</h3>
+    <p>Task: Decode Base64 encoded content.</p>
+    <pre><code>base64 -d data.txt</code></pre>
+    <img src="./assets/11to12.png" alt="11to12" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit11.html">Official page</a></p>
+  </div>
+
+  <div class="level">
+    <h3>Level 12 → Level 13</h3>
+    <p>Task: Decode ROT13 substitution using <code>tr</code>.</p>
+    <pre><code>cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'</code></pre>
+    <img src="./assets/12to13.png" alt="12to13" />
+    <p><a href="https://overthewire.org/wargames/bandit/bandit12.html">Official page</a></p>
   </div>
 
   <h2>Conclusion</h2>
-  <p>
-    خلال هذه التحديات تعلمنا:
-  </p>
+  <p>Up to Level 13, you’ve practiced:</p>
   <ul>
-    <li>التنقل بين الملفات واستخدام <code>ls</code>, <code>cd</code>, <code>cat</code>.</li>
-    <li>استخدام <code>file</code>, <code>strings</code>, <code>grep</code>, <code>sort</code>, <code>uniq</code>.</li>
-    <li>فك تشفير base64 و ROT13.</li>
-    <li>البحث عبر <code>find</code> بالاعتماد على الحجم أو المالك أو النوع.</li>
+    <li>Logging in with SSH.</li>
+    <li>Working with files and directories (including hidden or oddly named ones).</li>
+    <li>Using commands like <code>cat</code>, <code>file</code>, <code>strings</code>, <code>grep</code>, <code>sort</code>, and <code>uniq</code>.</li>
+    <li>Decoding techniques (Base64, ROT13).</li>
+    <li>Searching with <code>find</code> based on size, ownership, and permissions.</li>
   </ul>
   <p>
-    هذي الأدوات أساسية لأي شخص يبي يتعلم Linux والأمن المعلوماتي. إكمال لعبة Bandit يعتبر خطوة قوية قبل الدخول لتحديات أصعب.
+    These are core Linux and security skills that will be useful for further challenges in Bandit and beyond.
   </p>
 </body>
 </html>
