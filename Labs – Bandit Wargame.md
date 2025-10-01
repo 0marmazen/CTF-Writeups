@@ -3,53 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bandit Walkthrough - Levels 0 to 13</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #222;
-    }
-    .level {
-      border: 1px solid #ddd;
-      background: #fff;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .level img {
-      max-width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
-    pre {
-      background: #272822;
-      color: #f8f8f2;
-      padding: 10px;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
+  <head/>
 <body>
   <h1>Bandit Walkthrough - Levels 0 to 13</h1>
 
   <h2>Introduction</h2>
   <p>
-    <a href="https://overthewire.org/wargames/bandit/">Bandit</a> is a beginner-friendly wargame from OverTheWire. It teaches the fundamentals of Linux command-line usage and basic security concepts. The objective is to find passwords hidden on the system to progress from one level to the next.
+    <a href="https://overthewire.org/wargames/bandit/">Bandit</a> is a wargame from OverTheWire. It teaches the fundamentals of Linux command-line usage and basic security concepts. The objective is to find passwords hidden on the system to progress from one level to the next.
   </p>
 
   <p>Each level below contains: a description, the key commands, a screenshot, and a link to the official page.</p>
