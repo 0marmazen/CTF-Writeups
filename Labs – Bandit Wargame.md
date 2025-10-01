@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bandit Walkthrough - Levels 0 to 13</title>
+
   <head/>
 <body>
   <h1>Bandit Walkthrough - Levels 0 to 13</h1>
