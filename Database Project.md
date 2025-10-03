@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>📑 Project Preview</h1>
-  <p>Below is a visual preview of the project pages (pro1 → pro14)</p>
+  <p>Below is a visual preview of the project pages </p>
   <hr>
 
 
