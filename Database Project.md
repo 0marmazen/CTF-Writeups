@@ -11,7 +11,7 @@
 
 
 <p align="center">
-  <img src="./assets/pro1.png" width="400"><br>
+  <img src="./assets/pro1.png" width="600"><br>
   <img src="./assets/pro2.png" width="400"><br>
   <img src="./assets/pro3.png" width="400"><br>
   <img src="./assets/pro4.png" width="400"><br>
