@@ -5,7 +5,7 @@
 
   <head/>
 <body>
-  <h1>Bandit Walkthrough - Levels 0 to 13</h1>
+  <h1>Bandit Walkthrough - Levels</h1>
 
   <h2>Introduction</h2>
   <p>
