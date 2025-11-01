@@ -1,13 +1,9 @@
-Great — here’s a professional, GitHub-ready **`README.md`** you can drop straight into your repository.
-It uses the *actual outputs* from your transcript (nmap, gobuster, nc, nmap --interactive) and includes placeholders for images named `mr.robot1.png` … `mr.robot12.png` inside an `images/` folder.
 
-Copy the entire content below into `README.md` at your repo root and add your images to `images/`, then commit & push.
 
 ````markdown
 # Mr. Robot — TryHackMe Penetration Test Report
 
-![mr.robot1](images/mr.robot1.png)
-
+<img src="assets/mr.robot/mr.robot1.png" alt="mr.robot1" width="700">
 ---
 
 ## Executive Summary
@@ -52,8 +48,7 @@ This document is a factual, evidence-backed report based on the terminal transcr
 
 ## 1. Scope & Rules of Engagement
 
-![mr.robot2](images/mr.robot2.png)
-
+<img src="assets/mr.robot/mr.robot2.png" alt="mr.robot2" width="700">
 - **Target IP:** `10.10.199.99`  
 - **Environment:** TryHackMe training environment — authorized testing only.  
 - **Allowed actions:** Scanning, enumeration, exploitation limited to this lab.  
@@ -63,7 +58,7 @@ This document is a factual, evidence-backed report based on the terminal transcr
 
 ## 2. Evidence: Command outputs (from transcript)
 
-![mr.robot3](images/mr.robot3.png)
+<img src="assets/mr.robot/mr.robot3.png" alt="mr.robot3" width="700">
 
 **Nmap (initial):**
 ```text
@@ -160,7 +155,7 @@ root@ip-10-10-199-99:/root# cat key-3-of-3.txt
 
 ## 3. Tools used
 
-![mr.robot4](images/mr.robot4.png)
+<img src="assets/mr.robot/mr.robot4.png" alt="mr.robot4" width="700">
 
 * `nmap` (scanning, interactive used during escalation)
 * `gobuster` (web directory enumeration)
@@ -172,7 +167,7 @@ root@ip-10-10-199-99:/root# cat key-3-of-3.txt
 
 ## 4. Reconnaissance & Enumeration
 
-![mr.robot5](images/mr.robot5.png)
+<img src="assets/mr.robot/mr.robot5.png" alt="mr.robot5" width="700">
 
 Summary:
 
@@ -184,7 +179,7 @@ Summary:
 
 ## 5. Initial Access (reverse shell)
 
-![mr.robot6](images/mr.robot6.png)
+<img src="assets/mr.robot/mr.robot6.png" alt="mr.robot6" width="700">
 
 * Reverse shell connection received on attacker's listener (`nc -lvnp 2222`).
 * Shell upgraded with `python3 -c 'import pty; pty.spawn("/bin/bash")'`.
@@ -194,7 +189,7 @@ Summary:
 
 ## 6. Local discovery & credential handling
 
-![mr.robot7](images/mr.robot7.png)
+<img src="assets/mr.robot/mr.robot7.png" alt="mr.robot7" width="700">
 
 * `password.raw-md5` content: `robot:c3fcd3d76192e4007dfb496cca67e13b` (MD5).
 
@@ -205,7 +200,7 @@ Summary:
 
 ## 7. Getting `robot` user
 
-![mr.robot8](images/mr.robot8.png)
+<img src="assets/mr.robot/mr.robot8.png" alt="mr.robot8" width="700">
 
 * SSHed into the box as `robot` (credentials obtained during the exercise).
 * Read `/home/robot/key-2-of-3.txt`:
@@ -218,7 +213,7 @@ Summary:
 
 ## 8. Privilege escalation to root (detailed)
 
-![mr.robot9](images/mr.robot9.png)
+<img src="assets/mr.robot/mr.robot9.png" alt="mr.robot9" width="700">
 
 * `nmap` binary located at `/usr/local/bin/nmap` with elevated permissions.
 * Using `nmap --interactive` and running `!sh` spawned a root shell.
@@ -230,7 +225,7 @@ Summary:
 
 ## 9. Reproducible Commands (lab-only)
 
-![mr.robot10](images/mr.robot10.png)
+<img src="assets/mr.robot/mr.robot10.png" alt="mr.robot10" width="700">
 
 > Execute only in authorized lab environments.
 
@@ -265,7 +260,7 @@ nmap --interactive
 
 ## 10. Findings, root cause & risk analysis
 
-![mr.robot11](images/mr.robot11.png)
+<img src="assets/mr.robot/mr.robot11.png" alt="mr.robot11" width="700">
 
 **Findings**
 
@@ -285,7 +280,7 @@ nmap --interactive
 
 ## 11. Remediation recommendations
 
-![mr.robot12](images/mr.robot12.png)
+<img src="assets/mr.robot/mr.robot12.png" alt="mr.robot12" width="700">
 
 1. **Fix privileged binaries**
 
@@ -354,16 +349,4 @@ nmap --interactive
 
 ---
 
-*This report reflects activities performed within a TryHackMe lab. Use responsibly — do not run these techniques outside authorized environments.*
 
-```
-
-تم — هذا **README.md** جاهز للاستخدام على GitHub.    
-أريد أن أساعدك بالخطوة التالية أيضاً: تريدني أعمل واحد من الخيارات التالية الآن؟ (اختر رقم واحد)
-
-1. جهّز repo ZIP (README + 12 placeholder PNGs) للتنزيل.  
-2. أضع الملف مباشرة في المستند الذي أنشأته سابقًا هنا (موجود ضمن canvas).  
-3. أقدّم أوامر Git كاملة (مع أمثلة `git remote add` و`git push`) إذا تريد رفعه للمرة الأولى.  
-
-اختر رقم واحد وأنا أكمّل فورًا — ومرة ثانية، ممتاز شغلك 👏
-```
