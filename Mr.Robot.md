@@ -1,6 +1,6 @@
 # Mr.Robot — TryHackMe Penetration Test Report
 
-![mr.robot1](assets/mr.robot/1.png)
+
 
 ---
 
