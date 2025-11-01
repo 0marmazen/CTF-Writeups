@@ -1,6 +1,6 @@
 # Mr.Robot — TryHackMe Penetration Test Report
 
-![mr.robot1](images/mr.robot1.png)
+![mr.robot1](assets/mr.robot/1.png)
 
 ---
 
@@ -9,7 +9,7 @@
 **Engagement:** Authorized walkthrough / penetration test of the TryHackMe "Mr.Robot" machine
 **Target:** `10.10.199.99`
 **Assessment Date:** 2025-11-01
-**Author:** Your Name
+**Author:** Omar Mazen
 
 This document is a factual, evidence-backed report based on the terminal transcript created during the lab. The assessment demonstrates full compromise from low-privileged access to root via a local privilege escalation vector. Immediate remediation is recommended.
 
@@ -50,7 +50,7 @@ This document is a factual, evidence-backed report based on the terminal transcr
 
 ## 1. Scope & Rules of Engagement
 
-![mr.robot2](images/mr.robot2.png)
+![mr.robot2](assets/mr.robot/2.png)
 
 * **Target IP:** `10.10.199.99`
 * **Environment:** TryHackMe training environment — authorized testing only.
@@ -61,7 +61,7 @@ This document is a factual, evidence-backed report based on the terminal transcr
 
 ## 2. Evidence: Command outputs (from transcript)
 
-![mr.robot3](images/mr.robot3.png)
+![mr.robot3](assets/mr.robot/3.png)
 
 **Nmap (initial):**
 
@@ -159,7 +159,7 @@ root@ip-10-10-199-99:/root# cat key-3-of-3.txt
 
 ## 3. Tools used
 
-![mr.robot4](images/mr.robot4.png)
+![mr.robot4](assets/mr.robot/4.png)
 
 * `nmap` (scanning, interactive used during escalation)
 * `gobuster` (web directory enumeration)
@@ -171,7 +171,7 @@ root@ip-10-10-199-99:/root# cat key-3-of-3.txt
 
 ## 4. Reconnaissance & Enumeration
 
-![mr.robot5](images/mr.robot5.png)
+![mr.robot5](assets/mr.robot/5.png)
 
 Summary:
 
@@ -183,13 +183,13 @@ Summary:
 
 ## 5. Web Enumeration & Initial Access
 
-![mr.robot13](images/mr.robot13.png)
+![mr.robot13](assets/mr.robot/13.png)
 
 During directory enumeration and while Gobuster was running, I manually inspected several files and found elements that led directly to initial access. Below is a detailed step-by-step account with an image for each step.
 
 ### 5.1 `robots.txt`
 
-![mr.robot14](images/mr.robot14.png)
+![mr.robot14](assets/mr.robot/14.png)
 
 I opened `robots.txt` manually and found two important entries:
 
@@ -198,7 +198,7 @@ I opened `robots.txt` manually and found two important entries:
 
 ### 5.2 Discovery of `/license` and extracting encoded data
 
-![mr.robot15](images/mr.robot15.png)
+![mr.robot15](assets/mr.robot/15.png)
 
 While Gobuster continued enumerating, a `/license` page was discovered. Inspecting the page source revealed a **Base64-encoded string** hidden in an HTML comment. After decoding it, the string revealed WordPress credentials:
 
@@ -209,13 +209,13 @@ Password: ER28-0652
 
 ### 5.3 Using WordPress credentials & editing Theme Editor
 
-![mr.robot16](images/mr.robot16.png)
+![mr.robot16](assets/mr.robot/16.png)
 
 I used the extracted credentials to log into the WordPress admin panel. From the admin dashboard I navigated to the **Theme Editor** and modified `404.php` to include a PHP reverse shell payload. Saving that change meant a request that triggered the 404 page would execute the shell.
 
 ### 5.4 Catching the reverse shell
 
-![mr.robot17](images/mr.robot17.png)
+![mr.robot17](assets/mr.robot/17.png)
 
 On the attacker machine I ran a netcat listener on port **2222** to capture the incoming reverse shell:
 
@@ -235,7 +235,7 @@ This gave an initial low-privileged shell as the `daemon` user.
 
 ## 6. Initial access (reverse shell)
 
-![mr.robot6](images/mr.robot6.png)
+![mr.robot6](assets/mr.robot/6.png)
 
 * Reverse shell connection received on attacker's listener (`nc -lvnp 2222`).
 * Shell upgraded with `python3 -c 'import pty; pty.spawn("/bin/bash")'`.
@@ -245,7 +245,7 @@ This gave an initial low-privileged shell as the `daemon` user.
 
 ## 7. Local discovery & credential handling
 
-![mr.robot7](images/mr.robot7.png)
+![mr.robot7](assets/mr.robot/7.png)
 
 * `password.raw-md5` content: `robot:c3fcd3d76192e4007dfb496cca67e13b` (MD5).
 
@@ -256,7 +256,7 @@ This gave an initial low-privileged shell as the `daemon` user.
 
 ## 8. Gaining `robot` user
 
-![mr.robot8](images/mr.robot8.png)
+![mr.robot8](assets/mr.robot/8.png)
 
 * SSH into the box as `robot` using obtained credentials:
 
@@ -277,7 +277,7 @@ ssh robot@10.10.199.99
 
 ## 9. Privilege escalation (root)
 
-![mr.robot9](images/mr.robot9.png)
+![mr.robot9](assets/mr.robot/9.png)
 
 * Found SUID binaries with `find / -perm -u=s 2>/dev/null`, notably `/usr/local/bin/nmap`.
 * Used `nmap --interactive` and invoked `!sh` from its interactive prompt to spawn a root shell:
@@ -296,7 +296,7 @@ cat /root/key-3-of-3.txt
 
 ## 10. Reproducible commands (lab-only)
 
-![mr.robot10](images/mr.robot10.png)
+![mr.robot10](assets/mr.robot/10.png)
 
 > Execute only in authorized lab environments.
 
@@ -331,7 +331,7 @@ nmap --interactive
 
 ## 11. Findings, root cause & risk analysis
 
-![mr.robot11](images/mr.robot11.png)
+![mr.robot11](assets/mr.robot/11.png)
 
 **Findings**
 
@@ -351,7 +351,7 @@ nmap --interactive
 
 ## 12. Remediation recommendations
 
-![mr.robot12](images/mr.robot12.png)
+![mr.robot12](assets/mr.robot/12.png)
 
 1. **Fix privileged binaries**
 
