@@ -1,4 +1,4 @@
-<!--
+
 ````markdown
 # Mr. Robot — TryHackMe Penetration Test Report
 
@@ -345,7 +345,4 @@ nmap --interactive
 **Author:** Your Name
 **GitHub:** `https://github.com/yourusername`
 **Date:** 2025-11-01
-
----
--->
 
