@@ -387,7 +387,7 @@ nmap --interactive
 ## 13. Appendix — artifacts & flags
 
 **Flags recovered (from transcript)**
-
+* `key-1-of-3` — `https://10.10.199.99/key-1-of-3.txt` → `073403c8a58a1f80d943455fb30724b9`
 * `key-2-of-3` — `/home/robot/key-2-of-3.txt` → `822c73956184f694993bede3eb39f959`
 * `key-3-of-3` — `/root/key-3-of-3.txt` → `04787ddef27c3dee1ee161b21670b4e4`
 
