@@ -20,7 +20,7 @@ This document is a factual, evidence-backed report based on the terminal transcr
 * User access: SSH access to `robot` and retrieval of `key-2-of-3.txt`.
 * Privilege escalation: achieved `root` via `nmap --interactive`.
 * Flags recovered:
-
+  * `key-1-of-3`: `073403c8a58a1f80d943455fb30724b9`
   * `key-2-of-3`: `822c73956184f694993bede3eb39f959`
   * `key-3-of-3`: `04787ddef27c3dee1ee161b21670b4e4`
 
