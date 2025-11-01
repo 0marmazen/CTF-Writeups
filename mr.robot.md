@@ -1,5 +1,4 @@
-
-
+<!--
 ````markdown
 # Mr. Robot — TryHackMe Penetration Test Report
 
@@ -348,5 +347,5 @@ nmap --interactive
 **Date:** 2025-11-01
 
 ---
-
+-->
 
