@@ -80,6 +80,8 @@ PORT    STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 7.43 seconds
 ```
+
+
 ![mr.robot3](assets/mr.robot/31.png)
 **Gobuster (directory enumeration):**
 
@@ -103,7 +105,10 @@ Starting gobuster in directory enumeration mode
 /index.html           (Status: 200) [Size: 1188]
 /index.php            (Status: 301) [--> http://10.10.199.99/]
 ```
+
+
 ![mr.robot3](assets/mr.robot/32.png)
+
 **Netcat listener & reverse shell (snippet):**
 
 ```text
@@ -117,8 +122,9 @@ daemon@ip-10-10-199-99:/$ whoami
 daemon
 ```
 
-**Discovery in `/home/robot`:**
 ![mr.robot3](assets/mr.robot/33.png)
+**Discovery in `/home/robot`:**
+
 ```text
 daemon@ip-10-10-199-99:/home/robot$ ls
 key-2-of-3.txt  password.raw-md5
@@ -126,6 +132,9 @@ key-2-of-3.txt  password.raw-md5
 daemon@ip-10-10-199-99:/home/robot$ cat password.raw-md5
 robot:c3fcd3d76192e4007dfb496cca67e13b
 ```
+
+
+
 ![mr.robot3](assets/mr.robot/34.png)
 **SSH to `robot` & reading key-2:**
 
@@ -138,6 +147,8 @@ key-2-of-3.txt  password.raw-md5
 $ cat key-2-of-3.txt
 822c73956184f694993bede3eb39f959
 ```
+
+
 ![mr.robot3](assets/mr.robot/35.png)
 
 **SUID binaries and nmap interactive escalation:**
@@ -170,9 +181,9 @@ root@ip-10-10-199-99:/root# cat key-3-of-3.txt
 
 ---
 
-## 4. Reconnaissance & Enumeration
 
 ![mr.robot5](assets/mr.robot/3.png)
+## 4. Reconnaissance & Enumeration
 
 Summary:
 
@@ -182,15 +193,19 @@ Summary:
 
 ---
 
-## 5. Web Enumeration & Initial Access
+
 
 ![mr.robot13](assets/mr.robot/31.png)
+## 5. Web Enumeration & Initial Access
+
 
 During directory enumeration and while Gobuster was running, I manually inspected several files and found elements that led directly to initial access. Below is a detailed step-by-step account with an image for each step.
 
-### 5.1 `robots.txt`
 
 ![mr.robot14](assets/mr.robot/14.png)
+### 5.1 `robots.txt`
+
+
 
 I opened `robots.txt` manually and found two important entries:
 
@@ -199,22 +214,31 @@ I opened `robots.txt` manually and found two important entries:
 
 ### 5.2 Discovery of `/license` and extracting encoded data
 
+
 ![mr.robot15](assets/mr.robot/15.png)
+
 ![mr.robot15](assets/mr.robot/151.png)
 
+
+
 While Gobuster continued enumerating, a `/license` page was discovered. Inspecting the page source revealed a **Base64-encoded string** hidden in an HTML comment. After decoding it, the string revealed WordPress credentials:
+
+
 ![mr.robot15](assets/mr.robot/152.png)
 ```
 User: Elliot
 Password: ER28-0652
 ```
 ![mr.robot16](assets/mr.robot/16.png)
+
 ### 5.3 Using WordPress credentials & editing Theme Editor
 
 ![mr.robot16](assets/mr.robot/162.png)
 
 I used the extracted credentials to log into the WordPress admin panel. From the admin dashboard I navigated to the 
+
 ![mr.robot15](assets/mr.robot/161.png)
+
 **Theme Editor** and modified `404.php` to include a PHP reverse shell payload. Saving that change meant a request that triggered the 404 page would execute the shell.
 
 ### 5.4 Catching the reverse shell
@@ -246,9 +270,11 @@ This gave an initial low-privileged shell as the `daemon` user.
 
 ---
 
-## 7. Local discovery & credential handling
+
 
 ![mr.robot7](assets/mr.robot/7.png)
+## 7. Local discovery & credential handling
+
 
 * `password.raw-md5` content: `robot:c3fcd3d76192e4007dfb496cca67e13b` (MD5).
 
@@ -257,9 +283,12 @@ This gave an initial low-privileged shell as the `daemon` user.
 
 ---
 
-## 8. Gaining `robot` user
 
 ![mr.robot8](assets/mr.robot/8.png)
+
+
+## 8. Gaining `robot` user
+
 
 * SSH into the box as `robot` using obtained credentials:
 
@@ -278,9 +307,12 @@ ssh robot@10.10.199.99
 
 ---
 
-## 9. Privilege escalation (root)
+
 
 ![mr.robot9](assets/mr.robot/9.png)
+
+## 9. Privilege escalation (root)
+
 
 * Found SUID binaries with `find / -perm -u=s 2>/dev/null`, notably `/usr/local/bin/nmap`.
 * Used `nmap --interactive` and invoked `!sh` from its interactive prompt to spawn a root shell:
@@ -297,9 +329,13 @@ cat /root/key-3-of-3.txt
 
 ---
 
-## 10. Reproducible commands (lab-only)
+
 
 ![mr.robot10](assets/mr.robot/10.png)
+
+## 10. Reproducible commands (lab-only)
+
+
 
 > Execute only in authorized lab environments.
 
@@ -332,9 +368,12 @@ nmap --interactive
 
 ---
 
-## 11. Findings, root cause & risk analysis
+
 
 ![mr.robot11](assets/mr.robot/9.png)
+
+## 11. Findings, root cause & risk analysis
+
 
 **Findings**
 
