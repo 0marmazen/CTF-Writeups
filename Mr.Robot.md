@@ -331,7 +331,6 @@ cat /root/key-3-of-3.txt
 
 
 
-![mr.robot10](assets/mr.robot/10.png)
 
 ## 10. Reproducible commands (lab-only)
 
