@@ -1,7 +1,7 @@
 # Mr.Robot - Penetration Test Report
 
 
-![mr.robot2](assets/mr.robot/scr.png)
+![mr.robot2](assets/mr.robot/Scr.png)
 
 ---
 
