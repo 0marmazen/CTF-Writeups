@@ -5,269 +5,319 @@ Student: Omar Mazen
 Field: Computer Engineering — Cybersecurity  
 Goal: Documenting my progress and hands-on practice while learning RHEL 9  
 ````
-## 🧩 CH01 — Install RHEL 9 Step by Step
 
-### 🎯 Objectives
-- Understand what Linux and RHEL are.
-- Learn installation requirements and system setup.
 
-### 🧠 Notes
-- RHEL = Red Hat Enterprise Linux (enterprise-grade distro).
-- Installation requires ≥ 2 GB RAM and 20 GB disk.
-- Tools used: VirtualBox / VMware.
-
-### 🧰 Commands & Practice
-```bash
-# Check system info
-uname -a
-
-# List disks before installation
-lsblk
-```
-
-### ✅ Status
-
-✔️ Completed — Successfully installed RHEL 9 on VirtualBox.
+تمام يا عمر ✅
+دي النسخة المضغوطة والمنسّقة تمامًا لجيت هب —
+كل **شابتر** متقسّم لـ **دروس**، وتحت كل درس سطر بسيط تكتب فيه اللي تعلمته لاحقًا.
+(بدون مسافات كتير – جاهزة للكتابة بسرعة 👇)
 
 ---
 
-## 💻 CH02 — Accessing the Command Line
+```markdown
+# 🐧 RHEL 9 Learning Progress
 
-### 🎯 Objectives
-
-* Learn Bash shell basics.
-* Understand command syntax and navigation.
-
-### 🧠 Notes
-
-* Bash = Bourne Again Shell.
-* Command format: `command [options] [arguments]`
-* `history` shows last executed commands.
-
-### 🧰 Commands & Practice
-
-```bash
-pwd        # show current directory
-ls -l      # list files with details
-cd /etc    # move to etc directory
-history    # list past commands
-```
-
-### ✅ Status
-
-✔️ Completed — Practiced CLI navigation and command history.
+توثيق تعلمي لكورس Red Hat Enterprise Linux 9
 
 ---
 
-## 📁 CH03 — Managing Files From the Command Line
-
-### 🎯 Objectives
-
-* Manage directories and files via terminal.
-* Learn paths, file types, and symbolic vs hard links.
-
-### 🧠 Notes
-
-* Absolute path: starts from root `/`
-* Relative path: based on current directory
-* Hard link = direct pointer to inode
-* Soft link = shortcut to another file
-
-### 🧰 Commands & Practice
-
-```bash
-touch file1.txt
-cp file1.txt backup.txt
-mv backup.txt /tmp/
-ln file1.txt link1
-ln -s /tmp/backup.txt softlink
-```
-
-### ✅ Status
-
-✔️ Completed — Practiced linking, copying, moving, and deleting files.
+## CH01 — Install RHEL 9 Step by Step
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — Why Linux?  
+> 
+### Lesson 3 — Need to Download  
+> 
+### Lesson 4 — Installation Requirements  
+> 
+### Lesson 5 — Install RHEL 9 (Part 1)  
+> 
+### Lesson 6 — Install RHEL 9 (Part 2)  
+> 
+### Lesson 7 — Install RHEL 9 (Part 3)  
+> 
 
 ---
 
-## 🧑‍💻 CH04 — Getting Help in RHEL
-
-### 🎯 Objectives
-
-* Learn to use manual pages and help commands.
-
-### 🧠 Notes
-
-* `man command` → open manual page.
-* Use `/keyword` inside man to search.
-* Short help → `command --help`
-
-### 🧰 Commands
-
-```bash
-man ls
-ls --help
-man -k network
-```
-
-### ✅ Status
-
-✔️ Completed — Confident using man pages.
+## CH02 — Accessing the Command Line
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — What is Bash Shell  
+> 
+### Lesson 3 — Command Syntax  
+> 
+### Lesson 4 — How to Access the CLI  
+> 
+### Lesson 5 — Date, Passwd and File Commands  
+> 
+### Lesson 6 — Cat vs Less vs Head and Tail  
+> 
+### Lesson 7 — History Command  
+> 
+### Lesson 8 — Shell Shortcuts  
+> 
+### Lesson 9 — Summary  
+> 
 
 ---
 
-## 📝 CH05 — Creating, Viewing, and Editing Text Files
-
-### 🎯 Objectives
-
-* Learn redirection, piping, and editing text with Vim.
-
-### 🧠 Notes
-
-* `>` redirects output to file.
-* `|` pipes one command’s output to another.
-* Vim modes: normal, insert, visual.
-
-### 🧰 Commands
-
-```bash
-echo "Hello Linux" > hello.txt
-cat hello.txt | grep "Linux"
-vim notes.txt
-```
-
-### ✅ Status
-
-✔️ Completed — Created and edited files in Vim.
-
----
-
-## 👤 CH06 — Managing Local Users and Groups
-
-### 🎯 Objectives
-
-* Create, modify, and delete users/groups.
-* Understand UID/GID and permissions.
-
-### 🧠 Notes
-
-* Superuser access with `sudo` or `su`.
-* `/etc/passwd` and `/etc/group` store user info.
-
-### 🧰 Commands
-
-```bash
-sudo adduser testuser
-sudo passwd testuser
-sudo usermod -aG sudo testuser
-sudo deluser testuser
-```
-
-### ✅ Status
-
-✔️ Completed — Practiced managing local accounts.
+## CH03 — Managing Files From the Command Line
+### Lesson 1 — Access Linux File System  
+> 
+### Lesson 2 — Major Directories  
+> 
+### Lesson 3 — Linux File Types  
+> 
+### Lesson 4 — Naming Rules  
+> 
+### Lesson 5 — Absolute vs Relative Path  
+> 
+### Lesson 6 — LS Command  
+> 
+### Lesson 7 — Managing Files  
+> 
+### Lesson 8 — Create & Copy Files  
+> 
+### Lesson 9 — Move & Remove Files  
+> 
+### Lesson 10 — Hard Links vs Soft Links  
+> 
+### Lesson 11 — Linux Inodes  
+> 
+### Lesson 12 — Creating Links (Part 1)  
+> 
+### Lesson 13 — Creating Links (Part 2)  
+> 
+### Lesson 14 — Pattern Matching  
+> 
+### Lesson 15 — Grep Command  
+> 
+### Lesson 16 — Regular Expressions with Grep  
+> 
+### Lesson 17 — Cut and Tr Commands  
+> 
 
 ---
 
-## 🔐 CH07 — Controlling Access to Files
-
-### 🎯 Objectives
-
-* File permissions, ownership, and special bits.
-
-### 🧠 Notes
-
-* Permissions: r (4), w (2), x (1)
-* Numeric example: 755 = rwxr-xr-x
-* Sticky bit prevents deletion by others.
-
-### 🧰 Commands
-
-```bash
-chmod 755 script.sh
-chown omar:omar script.sh
-ls -l
-```
-
-### ✅ Status
-
-✔️ Completed — Practiced file permission management.
+## CH04 — Getting Help in RHEL
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — Manual Pages Overview  
+> 
+### Lesson 3 — man Command  
+> 
+### Lesson 4 — Search Patterns in Manual Pages  
+> 
+### Lesson 5 — Other Ways to Get Help  
+> 
+### Lesson 6 — Summary  
+> 
 
 ---
 
-## 🧾 CH11 — Analyzing and Storing Logs
-
-### 🎯 Objectives
-
-* Understand Linux logging system.
-
-### 🧠 Notes
-
-* Logs stored in `/var/log`
-* `journalctl` for systemd logs
-
-### 🧰 Commands
-
-```bash
-cd /var/log
-cat messages
-journalctl -xe
-```
-
-### ✅ Status
-
-✔️ Completed — Reviewed and analyzed log files.
-
----
-
-## 🌐 CH12 — Managing Networking
-
-### 🎯 Objectives
-
-* Configure IP, DNS, and hostname.
-
-### 🧠 Notes
-
-* Config files in `/etc/sysconfig/network-scripts/`
-* Use `nmcli` or `nmtui` for management.
-
-### 🧰 Commands
-
-```bash
-ip a
-nmcli dev show
-hostnamectl set-hostname rhel9lab
-```
-
-### ✅ Status
-
-✔️ Completed — Configured static IP and hostname.
+## CH05 — Creating, Viewing, and Editing Text Files
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — Input Output Redirection  
+> 
+### Lesson 3 — Piping in Linux  
+> 
+### Lesson 4 — VIM Editor Modes  
+> 
+### Lesson 5 — Command & Insert Modes  
+> 
+### Lesson 6 — Extended & Visual Modes  
+> 
+### Lesson 7 — VIM Cheat Sheet  
+> 
+### Lesson 8 — User-Defined Variables  
+> 
+### Lesson 9 — Shell Variables (Part 1)  
+> 
+### Lesson 10 — Shell Variables (Part 2)  
+> 
+### Lesson 11 — Shell Variables (Part 3)  
+> 
+### Lesson 12 — Set & Unset Permanent Variables  
+> 
+### Lesson 13 — Summary  
+> 
 
 ---
 
-## 📦 CH14 — Installing and Updating Software Packages
-
-### 🎯 Objectives
-
-* Use `rpm` and `yum` to install/manage packages.
-
-### 🧠 Notes
-
-* `rpm -i` install, `rpm -e` remove.
-* `yum` handles dependencies automatically.
-
-### 🧰 Commands
-
-```bash
-sudo yum install httpd -y
-rpm -qa | grep httpd
-sudo systemctl start httpd
-```
-
-### ✅ Status
-
-✔️ Completed — Installed Apache server successfully.
+## CH06 — Managing Local Users and Groups
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — User Identifier (UID)  
+> 
+### Lesson 3 — Group Identifier (GID)  
+> 
+### Lesson 4 — SU vs SUDO Commands  
+> 
+### Lesson 5 — Grant Superuser Access  
+> 
+### Lesson 6 — Create, Modify, Delete Users  
+> 
+### Lesson 7 — Create, Modify, Delete Groups  
+> 
+### Lesson 8 — Change User Password Params  
+> 
+### Lesson 9 — Restrict User Access  
+> 
+### Lesson 10 — Summary  
+> 
 
 ---
+
+## CH07 — Controlling Access to Files
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — File System Permissions  
+> 
+### Lesson 3 — Change Permissions (Symbolic)  
+> 
+### Lesson 4 — Change Permissions (Numeric)  
+> 
+### Lesson 5 — Ownership  
+> 
+### Lesson 6 — Special Permissions (Setuid, Setgid, Sticky)  
+> 
+### Lesson 7 — Default File Permissions  
+> 
+### Lesson 8 — Summary  
+> 
+
+---
+
+## CH08 — Monitoring and Managing Processes
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — List Running Processes  
+> 
+### Lesson 3 — Manage Foreground & Background  
+> 
+### Lesson 4 — Kill Signals  
+> 
+### Lesson 5 — Top Command  
+> 
+### Lesson 6 — Process Priority  
+> 
+### Lesson 7 — Summary  
+> 
+
+---
+
+## CH09 — Controlling Services and Daemons
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — Check Service Status  
+> 
+### Lesson 3 — Manage Services  
+> 
+### Lesson 4 — Summary  
+> 
+
+---
+
+## CH10 — Configuring and Securing SSH
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — Access Remote CLI with SSH  
+> 
+### Lesson 3 — Configure SSH Key Authentication  
+> 
+### Lesson 4 — Customize SSH Service Config  
+> 
+### Lesson 5 — Summary  
+> 
+
+---
+
+## CH11 — Analyzing and Storing Logs
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — System Log Architecture  
+> 
+### Lesson 3 — Review Syslog Files  
+> 
+### Lesson 4 — Preserve systemd Journal  
+> 
+### Lesson 5 — Change Timezone  
+> 
+### Lesson 6 — Summary  
+> 
+
+---
+
+## CH12 — Managing Networking
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — Validate Network Config  
+> 
+### Lesson 3 — Configure Networking  
+> 
+### Lesson 4 — Modify Network Files  
+> 
+### Lesson 5 — Configure Hostnames  
+> 
+### Lesson 6 — Summary  
+> 
+
+---
+
+## CH13 — Archiving and Transferring Files
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — Manage Tar Archives  
+> 
+### Lesson 3 — Transfer Files Securely  
+> 
+### Lesson 4 — Summary  
+> 
+
+---
+
+## CH14 — Installing and Updating Software
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — RPM Packages Overview  
+> 
+### Lesson 3 — Download RPM Package  
+> 
+### Lesson 4 — Examine RPM Packages  
+> 
+### Lesson 5 — Install Packages with rpm  
+> 
+### Lesson 6 — Yum Repositories  
+> 
+### Lesson 7 — Create Yum Repo  
+> 
+### Lesson 8 — List/Search/Install with YUM  
+> 
+### Lesson 9 — Update/Remove Packages with YUM  
+> 
+### Lesson 10 — Summary  
+> 
+
+---
+
+## CH15 — Accessing Linux File Systems
+### Lesson 1 — Intro  
+> 
+### Lesson 2 — Examine File Systems  
+> 
+### Lesson 3 — Mount & Unmount File Systems  
+> 
+### Lesson 4 — Search Files on Mounted FS  
+> 
+### Lesson 5 — Summary  
+> 
+```
+
+---
+
+تحب أجهزهولك كـ **ملف جاهز باسم `RHEL9_Learning.md`** علشان تنزله وتبدأ تكتب فيه على طول؟
+
 
 ## 📊 Summary
 
