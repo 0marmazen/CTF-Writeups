@@ -1,9 +1,9 @@
 
 ````markdown
 # 🐧 Red Hat Enterprise Linux 9 — Learning Journal  
-**Student:** Omar Mazen  
-**Field:** Computer Engineering — Cybersecurity  
-**Goal:** Documenting my progress and hands-on practice while learning RHEL 9  
+Student: Omar Mazen  
+Field: Computer Engineering — Cybersecurity  
+Goal: Documenting my progress and hands-on practice while learning RHEL 9  
 ````
 ## 🧩 CH01 — Install RHEL 9 Step by Step
 
@@ -23,7 +23,7 @@ uname -a
 
 # List disks before installation
 lsblk
-
+```
 
 ### ✅ Status
 
