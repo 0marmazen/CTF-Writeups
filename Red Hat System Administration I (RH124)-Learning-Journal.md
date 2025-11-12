@@ -15,21 +15,22 @@ Goal: Documenting my progress and hands-on practice while learning RHEL 9
 
 ## CH02 — Accessing the Command Line
 ### Lesson 1 — Intro  
-> 
-### Lesson 2 — What is Bash Shell  
-> 
-### Lesson 3 — Command Syntax  
-> 
-### Lesson 4 — How to Access the CLI  
-> 
-### Lesson 5 — Date, Passwd and File Commands  
-> 
-### Lesson 6 — Cat vs Less vs Head and Tail  
-> 
-### Lesson 7 — History Command  
-> 
-### Lesson 8 — Shell Shortcuts  
-> 
+>Introduction to the Linux command line (CLI). It’s the main way to interact with the system, letting you control almost everything using simple commands.
+### Lesson 2 — What is Bash Shell
+>Bash is the program that executes the commands you type in the terminal. It interprets your input so the system can understand and run it.
+### Lesson 3 — Command Syntax
+>Every Linux command has a structure: command [options] [arguments].
+Example: ls -l /home lists files in detail.
+### Lesson 4 — How to Access the CLI
+>You can open the terminal via the application or Ctrl+Alt+T. You can work as a regular user or as root depending on what you need.
+### Lesson 5 — Date, Passwd and File Commands
+>Important commands: date shows the current date/time, passwd changes your password, ls, cp, mv, rm manage files.
+### Lesson 6 — Cat vs Less vs Head and Tail
+>cat shows the whole file, less shows it page by page, head shows the first 10 lines, tail shows the last 10 lines and can follow updates.
+### Lesson 7 — History Command
+>history shows your previously executed commands, useful for repeating or reviewing commands.
+### Lesson 8 — Shell Shortcuts
+>Key shortcuts: Ctrl+C stops a running command, Ctrl+R searches command history, Tab auto-completes commands or filenames.
 ---
 
 ## CH03 — Managing Files From the Command Line
