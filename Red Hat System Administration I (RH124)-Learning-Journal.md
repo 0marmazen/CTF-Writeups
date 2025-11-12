@@ -5,7 +5,7 @@
 **Field:** Computer Engineering — Cybersecurity  
 **Goal:** Documenting my progress and hands-on practice while learning RHEL 9  
 ---
-
+````
 ## 🧩 CH01 — Install RHEL 9 Step by Step
 
 ### 🎯 Objectives
@@ -24,7 +24,7 @@ uname -a
 
 # List disks before installation
 lsblk
-````
+
 
 ### ✅ Status
 
