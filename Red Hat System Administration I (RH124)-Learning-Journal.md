@@ -13,12 +13,6 @@ Goal: Documenting my progress and hands-on practice while learning RHEL 9
 (بدون مسافات كتير – جاهزة للكتابة بسرعة 👇)
 
 ---
-
-```markdown
-# 🐧 RHEL 9 Learning Progress
-
-توثيق تعلمي لكورس Red Hat Enterprise Linux 9
-
 ---
 
 ## CH01 — Install RHEL 9 Step by Step
