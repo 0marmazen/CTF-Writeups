@@ -7,30 +7,10 @@ Goal: Documenting my progress and hands-on practice while learning RHEL 9
 ````
 
 
-تمام يا عمر ✅
-دي النسخة المضغوطة والمنسّقة تمامًا لجيت هب —
-كل **شابتر** متقسّم لـ **دروس**، وتحت كل درس سطر بسيط تكتب فيه اللي تعلمته لاحقًا.
-(بدون مسافات كتير – جاهزة للكتابة بسرعة 👇)
-
----
----
-
 ## CH01 — Install RHEL 9 Step by Step
-### Lesson 1 — Intro  
-> 
-### Lesson 2 — Why Linux?  
-> 
-### Lesson 3 — Need to Download  
-> 
-### Lesson 4 — Installation Requirements  
-> 
-### Lesson 5 — Install RHEL 9 (Part 1)  
-> 
-### Lesson 6 — Install RHEL 9 (Part 2)  
-> 
-### Lesson 7 — Install RHEL 9 (Part 3)  
-> 
 
+###  Install RHEL 9   
+> 
 ---
 
 ## CH02 — Accessing the Command Line
@@ -50,9 +30,6 @@ Goal: Documenting my progress and hands-on practice while learning RHEL 9
 > 
 ### Lesson 8 — Shell Shortcuts  
 > 
-### Lesson 9 — Summary  
-> 
-
 ---
 
 ## CH03 — Managing Files From the Command Line
