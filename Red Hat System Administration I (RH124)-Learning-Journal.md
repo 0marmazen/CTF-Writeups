@@ -291,9 +291,9 @@ Goal: Documenting my progress and hands-on practice while learning RHEL 9
 
 ## 📊 Summary
 
-| Chapter | Title          | Status | Notes                         |
-| ------- | -------------- | :----: | ----------------------------- |
-| CH01    | Install RHEL 9 |    ✅   | Installed on VirtualBox       |
+| Chapter | Title          | Status| Notes                         |
+| ------- | -------------- |:----:| ----------------------------- |
+| CH01    | Install RHEL 9 |   ✅  | Installed on VirtualBox       |
 | CH02    | Command Line   |    ✅   | Practiced basic commands      |
 | CH03    | Managing Files |    -   | Learned links and paths       |
 | CH04    | Help in RHEL   |       | Used `man` and `--help`       |
