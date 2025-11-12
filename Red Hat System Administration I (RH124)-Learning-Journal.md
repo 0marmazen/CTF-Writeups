@@ -69,9 +69,32 @@ hat@192:~$
 | `/var`   | Variable data like logs, emails, web files, cron jobs, etc.                                           |
 
 ### Lesson 3 — Linux File Types  
-> 
+| **Symbol** | **Meaning**                                        |
+| ---------- | -------------------------------------------------- |
+| `-`        | Regular file|
+| `d`        | Directory|
+| `l`        | Symbolic link (shortcut)|
+| `c`        | Character device file (in `/dev`)|
+| `b`        | Block device file (e.g., hard drives, disk images) |
+| `s`        | Socket      |
+| `p`        | Named pipe (FIFO)           |
+
+
+
 ### Lesson 4 — Naming Rules  
-> 
+ | **Linux File Names** | **Should**                                                        | 
+| -------------------- | ------------------------------------------------------------------ |
+| Naming rules         | Be descriptive                                                     |
+| Characters           | Only alphanumeric characters (UPPERCASE, lowercase, numbers, @, _) |
+| Case sensitivity     | Are case sensitive                                                 |
+| Hidden files         | Filenames starting with `.` are hidden                             |
+| Length               | Maximum number of characters for a filename is 255                 | 
+
+|**Should Not**   |
+|-|
+| Include embedded blanks                                          |
+|Contain shell metacharacters `* ? > < / ; & ! [ ] \ ‘ “ ( ) { }` |
+| Include embedded blanks                                          |
 ### Lesson 5 — Absolute vs Relative Path  
 > 
 ### Lesson 6 — LS Command  
