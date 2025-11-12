@@ -34,7 +34,7 @@ Goal: Documenting my progress and hands-on practice while learning RHEL 9
 
 ## CH03 — Managing Files From the Command Line
 ### Lesson 1 — Access Linux File System  
-> ![mr.robot2](assets/RHEL/Scr.png)
+> ![Linux File System](assets/RHEL/1.png)
 ### Lesson 2 — Major Directories  
 > 
 ### Lesson 3 — Linux File Types  
