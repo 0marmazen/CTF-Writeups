@@ -49,7 +49,37 @@ hat@192:~$
 ### Lesson 1 — Access Linux File System  
 > ![Linux File System](assets/RHEL/2.png)
 ### Lesson 2 — Major Directories  
-> 
+---
+
+````markdown
+---
+
+## 🔹 Linux Filesystem Overview
+
+| **Path** | **Description**                                                                                       |
+| -------- | ----------------------------------------------------------------------------------------------------- |
+| `/`      | Root directory, contains essential files for booting and other filesystems mounted as subdirectories. |
+| `/bin`   | Essential command binaries.                                                                           |
+| `/boot`  | Bootloader, kernel, and files needed to boot Linux.                                                   |
+| `/dev`   | Device files for accessing hardware devices.                                                          |
+| `/etc`   | Local system configuration files and installed application configs.                                   |
+| `/home`  | Users' personal directories.                                                                          |
+| `/lib`   | Shared libraries required for system boot.                                                            |
+| `/media` | Mount point for external removable media (USB, CD, etc.).                                             |
+| `/mnt`   | Temporary mount point for filesystems.                                                                |
+| `/opt`   | Optional files, like third-party tools.                                                               |
+| `/root`  | Root user's home directory.                                                                           |
+| `/sbin`  | System administration executables.                                                                    |
+| `/tmp`   | Temporary files, usually cleared on boot.                                                             |
+| `/usr`   | User applications, binaries, libraries, and man files.                                                |
+| `/var`   | Variable data like logs, emails, web files, cron jobs, etc.                                           |
+
+
+
+
+
+
+
 ### Lesson 3 — Linux File Types  
 > 
 ### Lesson 4 — Naming Rules  
