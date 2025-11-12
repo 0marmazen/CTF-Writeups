@@ -287,7 +287,6 @@ Goal: Documenting my progress and hands-on practice while learning RHEL 9
 
 ---
 
-تحب أجهزهولك كـ **ملف جاهز باسم `RHEL9_Learning.md`** علشان تنزله وتبدأ تكتب فيه على طول؟
 
 
 ## 📊 Summary
@@ -296,14 +295,14 @@ Goal: Documenting my progress and hands-on practice while learning RHEL 9
 | ------- | -------------- | :----: | ----------------------------- |
 | CH01    | Install RHEL 9 |    ✅   | Installed on VirtualBox       |
 | CH02    | Command Line   |    ✅   | Practiced basic commands      |
-| CH03    | Managing Files |    ✅   | Learned links and paths       |
-| CH04    | Help in RHEL   |    ✅   | Used `man` and `--help`       |
-| CH05    | Editing Text   |    ✅   | Practiced Vim and redirection |
-| CH06    | Users & Groups |    ✅   | Managed users & permissions   |
-| CH07    | File Access    |    ✅   | Learned chmod/chown           |
-| CH11    | Logs           |    ✅   | Used journalctl               |
-| CH12    | Networking     |    ✅   | Set IP and hostname           |
-| CH14    | Packages       |    ✅   | Installed via yum             |
+| CH03    | Managing Files |    -   | Learned links and paths       |
+| CH04    | Help in RHEL   |       | Used `man` and `--help`       |
+| CH05    | Editing Text   |       | Practiced Vim and redirection |
+| CH06    | Users & Groups |       | Managed users & permissions   |
+| CH07    | File Access    |       | Learned chmod/chown           |
+| CH11    | Logs           |       | Used journalctl               |
+| CH12    | Networking     |       | Set IP and hostname           |
+| CH14    | Packages       |       | Installed via yum             |
 
 ---
 
