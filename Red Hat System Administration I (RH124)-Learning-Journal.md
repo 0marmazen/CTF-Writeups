@@ -82,19 +82,14 @@ hat@192:~$
 
 
 ### Lesson 4 — Naming Rules  
- | **Linux File Names** | **Should**                                                        | 
-| -------------------- | ------------------------------------------------------------------ |
-| Naming rules         | Be descriptive                                                     |
-| Characters           | Only alphanumeric characters (UPPERCASE, lowercase, numbers, @, _) |
-| Case sensitivity     | Are case sensitive                                                 |
-| Hidden files         | Filenames starting with `.` are hidden                             |
-| Length               | Maximum number of characters for a filename is 255                 | 
+| **Linux File Names** | **Should**                                 | **Should Not**                              |
+| -------------------- | -------------------------------------------- | --------------------------------------------------|
+| Naming rules | Be descriptive| Include embedded blanks|
+| Characters | Only alphanumeric characters (UPPERCASE, lowercase, numbers, @, _) | Contain shell metacharacters `* ? > < / ; & ! [ ] \ ‘ “ ( ) { }` |
+| Case sensitivity| Are case sensitive| —|
+| Hidden files| Filenames starting with `.` are hidden|—|
+| Length| Maximum number of characters for a filename is 255| —|
 
-|**Should Not**   |
-|-|
-| Include embedded blanks                                          |
-|Contain shell metacharacters `* ? > < / ; & ! [ ] \ ‘ “ ( ) { }` |
-| Include embedded blanks                                          |
 ### Lesson 5 — Absolute vs Relative Path  
 > 
 ### Lesson 6 — LS Command  
