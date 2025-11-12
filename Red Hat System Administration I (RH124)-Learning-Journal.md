@@ -49,12 +49,6 @@ hat@192:~$
 ### Lesson 1 — Access Linux File System  
 > ![Linux File System](assets/RHEL/2.png)
 ### Lesson 2 — Major Directories  
----
-
-````markdown
----
-
-## 🔹 Linux Filesystem Overview
 
 | **Path** | **Description**                                                                                       |
 | -------- | ----------------------------------------------------------------------------------------------------- |
@@ -73,12 +67,6 @@ hat@192:~$
 | `/tmp`   | Temporary files, usually cleared on boot.                                                             |
 | `/usr`   | User applications, binaries, libraries, and man files.                                                |
 | `/var`   | Variable data like logs, emails, web files, cron jobs, etc.                                           |
-
-
-
-
-
-
 
 ### Lesson 3 — Linux File Types  
 > 
