@@ -310,8 +310,14 @@ man 5 passwd    # Section 5: File formats
 man -K "print files"  # This is equivalent to using apropos "print files"
 ```
 ### Lesson 5 — Other Ways to Get Help  
-> 
- 
+| **Method**| **Command / Link**| **Description**|
+| - | - | - |
+| **Man pages**| `man command_name`| Opens the manual page for the specified command.|
+| **--help option**| `command_name --help`| Displays a concise summary of the command’s options and usage.|
+| **Red Hat Documentation**| `https://docs.redhat.com`| Official primary source for Red Hat product documentation.|
+| **Red Hat Access Documentation**| `https://access.redhat.com/documentation/en/` | Documentation available via the Red Hat Customer Portal.|
+| **The Linux Documentation Project (TLDP)** | `http://tldp.org/`| General Linux guides, HOWTOs, and manuals maintained by the open-source community. |
+
 
 ---
 
