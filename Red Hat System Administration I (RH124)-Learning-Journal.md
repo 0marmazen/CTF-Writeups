@@ -109,8 +109,6 @@ hat@192:~$
 
 > 
 ### Lesson 7 — Managing Files  
-> 
-### Lesson 8 — Create & Copy Files  
 |ACTIVITY | COMMAND SYNTAX |
 |-|-|
 |Create a directory | mkdir directory|
@@ -119,12 +117,49 @@ hat@192:~$
 |Move or rename a file or directory|`mv file new-file`|
 |Remove a file|`rm file`|
 |Remove a directory containing files|`rm -r directory`|
-|Remove an empty directory|`rmdir directory`|
+|Remove an empty directory|`rmdir directory`| 
+### Lesson 8 — Create & Copy Files  
+
+
+
+ **File Creation Commands**
+
+| **Command**                 | **Explanation**                                                                                                            |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `touch file1 File1`         | Creates **two files** — `file1` and `File1`. Because Linux is **case sensitive**, they are treated as **different files**. |
+| `touch /root/Desktop/file1` | Creates a file named `file1` inside `/root/Desktop`. Requires **root permissions**.                                        |
+| `touch {file,file1,fil2}`   | Creates **three files**: `file`, `file1`, and `fil2`. The `{}` are used for **brace expansion**.                           |
+
+
+
+ **Directory Creation Commands**
+
+| **Command**               | **Explanation**                                                                                                                                          |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `mkdir dir1 Dir2`         | Creates two directories: `dir1` and `Dir2` (again, case sensitive).                                                                                      |
+| `mkdir -p dir1/dir2/dir3` | Creates a **nested directory structure** — if `dir1` and `dir2` don’t exist, they will be created automatically thanks to the **`-p` (parents)** option. |
+| `mkdir 'system admin'`    | Creates a directory named **system admin** (with a space in the name). Quotes are used to treat the space as part of the name.                           |
+| `mkdir system\ admin`     | Does the **same thing** as above — the backslash `\` escapes the space.                                                                                  |
+
+
+
+ **Copy Commands**
+
+| **Command**                    | **Explanation**                                                                     |
+| ------------------------------ | ----------------------------------------------------------------------------------- |
+| `cp -r /dir /home/hat/Desktop` | Recursively (**`-r`**) copies the entire `/dir` directory into `/home/hat/Desktop`. |
+| `cp -r /dir .`                 | Copies `/dir` into the **current directory** (`.` means current directory).         |
+| `cp -r /dir ~hat`              | Copies `/dir` into the **home directory of user `hat`** (`~hat` means `/home/hat`). |
+
+
+
+
 ### Lesson 9 — Move & Remove Files  
 > 
 ### Lesson 10 — Hard Links vs Soft Links  
-> 🧱 Hard link = another name for the same file (`same data`).
-> 🔗 Soft link = a pointer or `shortcut` to the original file.
+| 🧱 Hard link | another name for the same file (`same data`).|
+|-|-|
+| 🔗 Soft link | a pointer or `shortcut` to the original file.|
 ### Lesson 11 — Linux Inodes  
 > 
 ### Lesson 12 — Creating Links (Part 1)  
