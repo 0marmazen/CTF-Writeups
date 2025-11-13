@@ -31,7 +31,7 @@ Example: ls -l /home lists files in detail.
 >history shows your previously executed commands, useful for repeating or reviewing commands.
 ### Lesson 8 — Shell Shortcuts
 >Key shortcuts: Ctrl+C stops a running command, Ctrl+R searches command history, Tab auto-completes commands or filenames.
-> ![Shell Shortcuts](assets/RHEL/1.png)
+> ![Shell Shortcuts](../assets/RHEL/1.png)
 ```BASH
 hat@192:~$ ls | grep my
 myfoldeer
@@ -47,7 +47,7 @@ hat@192:~$
 
 ## CH03 — Managing Files From the Command Line
 ### Lesson 1 — Access Linux File System  
-> ![Linux File System](assets/RHEL/2.png)
+> ![Linux File System](../assets/RHEL/2.png)
 ### Lesson 2 — Major Directories  
 
 | **Path** | **Description**                                                                                       |
