@@ -1,10 +1,10 @@
 
-````markdown
-# 🐧 Red Hat Enterprise Linux 9 — Learning Journal  
+
+# 🐧 Red Hat System Administration I (RH124) — Learning Journal  
 Student: Omar Mazen  
 Field: Computer Engineering — Cybersecurity  
 Goal: Documenting my progress and hands-on practice while learning RHEL 9  
-````
+
 
 
 ## CH01 — Install RHEL 9 Step by Step
