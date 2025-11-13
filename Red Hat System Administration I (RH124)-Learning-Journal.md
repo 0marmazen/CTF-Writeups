@@ -93,15 +93,38 @@ hat@192:~$
 ### Lesson 5 — Absolute vs Relative Path  
 > 
 ### Lesson 6 — LS Command  
+| **Option**  | **Description**                                                                                                                      |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `-l`        | Long list format. Shows file permissions, number of links, owner, group, file size, last modification time, and file/directory name. |
+| `-lh`       | Long list format with **human-readable file sizes** (e.g., KB, MB).                                                                  |
+| `-r`        | Lists files in **reverse order**.                                                                                                    |
+| `-a`        | Shows **all files**, including hidden files (those starting with `.`).                                                               |
+| `-ltr`      | Combines options: **long format, sort by time**, and **reverse order**. Shows the latest modifications last.                         |
+| `-F`        | Adds a **trailing `/` for directories**, `*` for executable files, etc.                                                              |
+| `-lS`       | Long format, **sorted by size** (largest to smallest).                                                                               |
+| `-R`        | Recursively lists **all directories and subdirectories**.                                                                            |
+| `-i`        | Displays **inode numbers** beside files and directories.                                                                             |
+| `dir`        | The dir command is similar to `ls` and can be used in Linux to list files and directories. It supports the same options as `ls`.     |
+| `man ls`    | Opens the **manual page** for `ls`, showing all options and details.                                                                 |
+
 > 
 ### Lesson 7 — Managing Files  
 > 
 ### Lesson 8 — Create & Copy Files  
-> 
+|ACTIVITY | COMMAND SYNTAX |
+|-|-|
+|Create a directory | mkdir directory|
+|Copy a file|`cp file new-file`|
+|Copy a directory and its contents|`cp -r directory new-directory`|
+|Move or rename a file or directory|`mv file new-file`|
+|Remove a file|`rm file`|
+|Remove a directory containing files|`rm -r directory`|
+|Remove an empty directory|`rmdir directory`|
 ### Lesson 9 — Move & Remove Files  
 > 
 ### Lesson 10 — Hard Links vs Soft Links  
-> 
+> 🧱 Hard link = another name for the same file (`same data`).
+> 🔗 Soft link = a pointer or `shortcut` to the original file.
 ### Lesson 11 — Linux Inodes  
 > 
 ### Lesson 12 — Creating Links (Part 1)  
