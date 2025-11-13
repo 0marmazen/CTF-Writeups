@@ -6,7 +6,7 @@
   <head/>
 <body>
   <h1>Bandit Walkthrough - Levels</h1>
-<img src="../assets/Bandit.png" alt="Bandit" />
+<img src="../assets/Bandit/Bandit.png" alt="Bandit" />
   <h2>Introduction</h2>
   <p>
     <a href="https://overthewire.org/wargames/bandit/">Bandit</a> is a wargame from OverTheWire. It teaches the fundamentals of Linux command-line usage and basic security concepts. The objective is to find passwords hidden on the system to progress from one level to the next.
