@@ -219,34 +219,102 @@ ln file1 Hlink2        # Creates a hard link   only file
 | `[[:punct:]]` | Any printable character not a space or alphanumeric. |
 | `[[:digit:]]` | Any single digit from 0 to 9. |
 | `[[:space:]]` | Any single white space character. This may include tabs, newlines, carriage returns, form feeds, or spaces. |
-### Lesson 15 — Grep Command  
-> 
-### Lesson 16 — Regular Expressions with Grep  
-> 
+
+### Lesson 15 — Regular Expressions with Grep  
+| Symbol | Description |
+| :--- | :--- |
+| `.` | replaces any character |
+| `^` | matches start of string |
+| `$` | matches end of string |
+| `*` | matches up zero or more times the preceding character |
+| `\` | Represent special characters |
+| `{}` | Groups regular expressions (In BRE, often used as `\ {}`) |
+| `?` | Matches up exactly one character (In BRE, often used as `\ ?`) |
+### Lesson 16 — Grep Command  
+| Command | Basic Regular Expression (BRE) | Matches (Example) | Description |
+| :--- | :--- | :--- | :--- |
+| `grep cat /usr/share/dict/words` | `cat` | Any line containing the substring **`cat`** anywhere (e.g., `c**at**`, `c**at**tle`, `lo**cat**ion`). | Simple search for a literal string. |
+| `grep ^cat /usr/share/dict/words` | `^cat` | Any line that **starts** with the string **`cat`** (e.g., **`cat`**, **`cat**egory`). | Uses **`^`** to anchor the match to the **start of the line**. |
+| `grep cat$ /usr/share/dict/words` | `cat$` | Any line that **ends** with the string **`cat`** (e.g., `wild**cat**`, **`cat`**). | Uses **`$`** to anchor the match to the **end of the line**. |
+| `grep ^cat$ /usr/share/dict/words` | `^cat$` | The line containing the word **`cat`** **only**. | Matches the entire line exactly with the specified string. |
+| `grep c.t /usr/share/dict/words` | `c.t` | Any line containing `c` followed by **any single character** (represented by `.`), followed by `t` (e.g., **`cat`**, **`cut`**, **`c1t`**). | Uses **`.`** (dot) to match any single character. |
+| `grep ^c.t$ /usr/share/dict/words` | `^c.t$` | Any three-letter word starting with **`c`** and ending with **`t`** (e.g., **`cat`**, **`cut`**, **`cot`**). | Combines start/end anchors with the single-character wildcard. |
+| `grep c[aou]t /usr/share/dict/words` | `c[aou]t` | Any line containing `c` followed by **`a` or `o` or `u`**, followed by `t` (matches **`cat`**, **`cot`**, **`cut`**). | Uses **`[]`** to match a single character from a specific set. |
+| `grep ^c[aou]t$ /usr/share/dict/words` | `^c[aou]t$` | Only the three-letter words: **`cat`**, **`cot`**, or **`cut`**. | Combines anchors with the character set. |
+| `grep -e cat -e tele /usr/share/dict/words` | `cat` or `tele` | Any line containing **`cat`** **OR** **`tele`**. | Uses the **`-e`** option to specify **multiple patterns** (OR logic). |
+| `grep -l ericsson /etc/passwd` | `ericsson` | Displays **`/etc/passwd`** **only** if the string `ericsson` is found within it. | Uses the **`-l`** option to show **filename only** (silent match). |
+| `ps aux \| grep ^root` | `^root` | Lines that **start** with the string **`root`** in the output of the `ps aux` command. | Filters the output of `ps aux` using a **pipe** (`|`). |
 ### Lesson 17 — Cut and Tr Commands  
-> 
+
+```bash
+-# CUT command examples
+
+cut -f 1 -d : /etc/passwd # Extract the first field (usually username) from /etc/passwd using ':' as delimiter
+cut -c 1-7 /etc/passwd    # Extract characters from column 1 to 7 from each line of /etc/passwd
+cut -c 25- /etc/passwd    # Extract all characters from column 25 to the end from each line of /etc/passwd
+
+-# TR command examples
+
+echo hello world | tr a-z A-Z                        # Convert lowercase letters to uppercase
+echo hello world | tr [:lower:] [:upper:]            # Another way to convert lowercase to uppercase using character classes
+echo "Welcome To Linux" | tr [:space:] '\t'          # Replace spaces with tabs
+echo "Welcome To Linux" | tr -d 'W'                  # Delete the character 'W' from the string
+echo "my ID is 73535" | tr -d [:digit:]              # Delete all digits from the string
+```
+
+
+
 
 ---
 
 ## CH04 — Getting Help in RHEL
 ### Lesson 1 — Intro  
-> 
+> The goal in the chapter is "Resolve problems by using local help systems" refers to using the documentation and help files built into the Linux operating system.
 ### Lesson 2 — Manual Pages Overview  
-> 
+Linux Man Page Sections and Their Functions
+| **Section Number** | **Content Type / Function**                                                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1**              | **User commands** – Executable programs and shell commands that users can run. Example: `ls`, `mkdir`.                                      |
+| **2**              | **System calls** – Functions provided by the kernel, callable from user space. Example: `open()`, `read()`.                                 |
+| **3**              | **Library functions** – Functions provided by program libraries. Example: `printf()`, `malloc()`.                                           |
+| **4**              | **Special files / Devices** – Device files found in `/dev`. Example: `/dev/null`, `/dev/sda`.                                               |
+| **5**              | **File formats** – Configuration and data file formats. Example: `/etc/passwd`, `/etc/fstab`.                                               |
+| **6**              | **Games** – Historical section for games and entertainment programs. Example: `robots`, `fortune`.                                          |
+| **7**              | **Conventions, standards, and miscellaneous** – Protocols, standards, file system conventions. Example: `hier(7)` for filesystem hierarchy. |
+| **8**              | **System administration and privileged commands** – Commands for system maintenance, usually requiring root. Example: `fsck`, `mount`.      |
+| **9**              | **Kernel routines / Linux kernel API** – Internal kernel calls, not normally used by standard users. Example: `sched_setscheduler()`.       |
+
+
+
+
 ### Lesson 3 — man Command  
-> 
+```bash
+# MAN Page Command Examples
+
+# View the manual page for the mkdir command (default Section 1)
+man mkdir       # Section 1: User commands
+
+# Perform a keyword search across all manual pages
+man -K passwd   # Searches for the keyword "passwd" in all sections
+
+# View the manual page for the passwd command (Section 1)
+man 1 passwd    # Section 1: User commands
+
+# View the manual page for the /etc/passwd file format (Section 5)
+man 5 passwd    # Section 5: File formats
+ [[[[[you need :1,4,5,9 ]]]]]
+``` 
 ### Lesson 4 — Search Patterns in Manual Pages  
 > 
 ### Lesson 5 — Other Ways to Get Help  
 > 
-### Lesson 6 — Summary  
-> 
+ 
 
 ---
 
 ## CH05 — Creating, Viewing, and Editing Text Files
 ### Lesson 1 — Intro  
-> 
+>> introduction >> The goal in this chapter is"Create, view, and edit text files from command output or in a text editor
 ### Lesson 2 — Input Output Redirection  
 > 
 ### Lesson 3 — Piping in Linux  
