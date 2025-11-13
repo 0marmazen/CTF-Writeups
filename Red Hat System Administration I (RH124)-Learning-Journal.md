@@ -155,19 +155,70 @@ hat@192:~$
 
 
 ### Lesson 9 — Move & Remove Files  
-> 
+| **Command**| **Explanation**|
+| -------------------------- | ------ |
+| `mv dir /home/hat/Desktop` | Moves the directory **`dir`** to `/home/hat/Desktop`.|
+| `mv dir .`| Moves the directory **`dir`** to the **current directory** (`.`). If it’s already there, nothing happens.|
+| `mv dir ~hat`| Moves the directory **`dir`** to the **home directory** of user `hat`.|
+| `mv file1 File1 ..` | Moves **`file1`** and **`File1`** to the **parent directory** (`..`).|
+| `rm -rf dir`  | Forcefully and recursively removes the **directory `dir`** and all its contents. ⚠️ This action **cannot be undone**. |
+ 
 ### Lesson 10 — Hard Links vs Soft Links  
 | 🧱 Hard link | another name for the same file (`same data`).|
 |-|-|
 | 🔗 Soft link | a pointer or `shortcut` to the original file.|
+
+```markdown
+Every file is a hard link to its inode.
+Creating more hard links just adds additional names pointing to the same inode and data.
+```
+
 ### Lesson 11 — Linux Inodes  
-> 
+
+An **inode** (index node) is a **data structure** used by the Linux filesystem to **store all information about a file or directory except its name**.
+Each file or directory has a unique **inode number** that identifies it within the filesystem.
+
+| **Field (Metadata)**        | **Description**|
+| -------------------- | --------- |
+| **Inode number**            | Unique ID assigned to each file within a filesystem.|
+| **File type**               | Indicates if it’s a regular file, directory, symbolic link, etc.|
+| **Permissions**             | File access rights (read, write, execute for user/group/others).|
+| **Owner (UID)**             | User ID of the file owner.|
+| **Group (GID)**             | Group ID associated with the file.|
+| **File size**               | The size of the file in bytes.|
+| **Timestamps**              | Includes: <br> - **atime** (last access time) <br> - **mtime** (last modification time) <br> - **ctime** (last status change time). |
+| **Link count**              | Number of hard links pointing to the inode.|
+| **Pointers to data blocks** | Addresses of the actual data blocks on the disk where file contents are stored.|
+| **Flags**                   | Extra info like immutability or append-only status.|
+ 
 ### Lesson 12 — Creating Links (Part 1)  
-> 
+
+```bash
+ln -s file1 Slink1     # Creates a soft link   file and dirctor
+ln file1 Hlink2        # Creates a hard link   only file
+```
 ### Lesson 13 — Creating Links (Part 2)  
-> 
+| **Type**| **Can link to**| **Restrictions / Notes**|
+| - | - | - |
+| **Soft Link (Symbolic Link)** | Files **and directories**| Can link across **different partitions or filesystems**. If the original is deleted, the link **breaks**.|
+| **Hard Link**| **Files only** (not directories, except in rare cases for system use) | Must be on the **same partition/filesystem**. Points directly to the **inode**. Deleting the original file does **not** break the link. |
+
 ### Lesson 14 — Pattern Matching  
-> 
+> ########################################################################################################################################################################################################################################################################################################################################################[practice]###############################################################################################################################################################################################################################################################################################################################################################
+| PATTERN | MATCHES |
+| :--- | :--- |
+| `*` | Any string of zero or more characters. |
+| `?` | Any single character. |
+| `[abc...]` | Any one character in the enclosed class (between the square brackets). |
+| `[!abc...]` | Any one character **not** in the enclosed class. |
+| `[^abc...]` | Any one character **not** in the enclosed class. |
+| `[[:alpha:]]` | Any alphabetic character. |
+| `[[:lower:]]` | Any lowercase character. |
+| `[[:upper:]]` | Any uppercase character. |
+| `[[:alnum:]]` | Any alphabetic character or digit. |
+| `[[:punct:]]` | Any printable character not a space or alphanumeric. |
+| `[[:digit:]]` | Any single digit from 0 to 9. |
+| `[[:space:]]` | Any single white space character. This may include tabs, newlines, carriage returns, form feeds, or spaces. |
 ### Lesson 15 — Grep Command  
 > 
 ### Lesson 16 — Regular Expressions with Grep  
