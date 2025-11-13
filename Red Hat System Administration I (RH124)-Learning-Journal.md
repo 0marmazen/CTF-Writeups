@@ -302,10 +302,13 @@ man 1 passwd    # Section 1: User commands
 
 # View the manual page for the /etc/passwd file format (Section 5)
 man 5 passwd    # Section 5: File formats
- [[[[[you need :1,4,5,9 ]]]]]
+ [[[[[you need :1,4,5,9 ]]]]] in /share/man in default open section 1 
 ``` 
 ### Lesson 4 — Search Patterns in Manual Pages  
-> 
+```bash
+# Perform a keyword search across the descriptions of all manual pages
+man -K "print files"  # This is equivalent to using apropos "print files"
+```
 ### Lesson 5 — Other Ways to Get Help  
 > 
  
