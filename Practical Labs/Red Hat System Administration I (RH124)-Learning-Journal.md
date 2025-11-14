@@ -349,6 +349,9 @@ echo "I lovelinux" | wc             # Count lines, words, and characters in a te
 ls -lR / 2>/dev/null | wc -l        # Count all files under root (/) while ignoring permission errors
 ```
 ### Lesson 4 — VIM Editor Modes  
+>Introdution of VIM Editor Modes 
+### Lesson 5 — Command & Insert Modes  
+
 > | **Command** | **Description**                            |
 | ----------- | ------------------------------------------ |
 | `:wq`       | Save the current file **and quit** Vim.    |
@@ -356,10 +359,10 @@ ls -lR / 2>/dev/null | wc -l        # Count all files under root (/) while ignor
 | `:w`        | Save the file and **stay** inside Vim.     |
 | `:q`        | Quit **only if no unsaved changes** exist. |
 | `:q!`       | Quit and **discard** all unsaved changes.  |
-### Lesson 5 — Command & Insert Modes  
+ 
 
-
- ** Navigation, Search & Replace**
+### Lesson 6 — Extended & Visual Modes  
+> ** Navigation, Search, Replace, Editor Options & External Commands**
 
 | **Command**     | **Description**|
 | ------------------ | -- |
@@ -370,11 +373,8 @@ ls -lR / 2>/dev/null | wc -l        # Count all files under root (/) while ignor
 | `:!date`        | Run external command `date` and show its output in Vim. |
 | `:3!date`       | Run `date` and insert its output into **line 3**.       |
 
-
-### Lesson 6 — Extended & Visual Modes  
-> 
 ### Lesson 7 — VIM Cheat Sheet  
-> 
+> ![Shell VIM Cheat Sheet ](../assets/RHEL/5.png)
 ### Lesson 8 — User-Defined Variables  
 > 
 ### Lesson 9 — Shell Variables (Part 1)  
