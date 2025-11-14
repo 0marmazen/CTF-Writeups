@@ -5,7 +5,7 @@ Student: Omar Mazen
 Field: Computer Engineering — Cybersecurity  
 Goal: Documenting my progress and hands-on practice while learning RHEL 9  
 
- ![Shell Shortcuts](../assets/RHEL/RHEL.png)
+ ![cover](../assets/RHEL/RHEL.png)
 
 ## CH01 — Install RHEL 9 Step by Step
 
@@ -349,9 +349,28 @@ echo "I lovelinux" | wc             # Count lines, words, and characters in a te
 ls -lR / 2>/dev/null | wc -l        # Count all files under root (/) while ignoring permission errors
 ```
 ### Lesson 4 — VIM Editor Modes  
-> 
+> | **Command** | **Description**                            |
+| ----------- | ------------------------------------------ |
+| `:wq`       | Save the current file **and quit** Vim.    |
+| `:x`        | Save only if changes exist, then **quit**. |
+| `:w`        | Save the file and **stay** inside Vim.     |
+| `:q`        | Quit **only if no unsaved changes** exist. |
+| `:q!`       | Quit and **discard** all unsaved changes.  |
 ### Lesson 5 — Command & Insert Modes  
-> 
+
+
+ ** Navigation, Search & Replace**
+
+| **Command**     | **Description**|
+| ------------------ | -- |
+| `:10`           | Jump to **line 10**.|
+| `:%s/old/new/g` | Replace **all occurrences** of “old” with “new” in the entire file. |
+| `:set number`   | Enable line numbers.|
+| `:set nonumber` | Disable line numbers.|
+| `:!date`        | Run external command `date` and show its output in Vim. |
+| `:3!date`       | Run `date` and insert its output into **line 3**.       |
+
+
 ### Lesson 6 — Extended & Visual Modes  
 > 
 ### Lesson 7 — VIM Cheat Sheet  
