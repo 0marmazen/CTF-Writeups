@@ -376,9 +376,29 @@ ls -lR / 2>/dev/null | wc -l        # Count all files under root (/) while ignor
 ### Lesson 7 — VIM Cheat Sheet  
 > ![Shell VIM Cheat Sheet ](../assets/RHEL/5.png)
 ### Lesson 8 — User-Defined Variables  
-> 
+>| **Description**               | **Command**                                               | **Output**   | **Notes**                                     |
+| ----------------------------- | --------------------------------------------------------- | ------------ | --------------------------------------------- |
+| Define variable `x`           | `x=10`                                                    | -            | No spaces around `=`                          |
+| Define variable `y`           | `y=5`                                                     | -            | Same rule for no spaces                       |
+| Display value of variable `x` | `echo $x`                                                 | `10`         | `$` is used to access the variable's value    |
+| Add two variables             | `echo "x + y = $[x+y]"` <br> or `echo "x + y = $((x+y))"` | `x + y = 15` | `$[ ]` is older syntax; `$(( ))` is preferred |
+| Subtract two variables        | `echo "x - y = $[x-y]"` <br> or `echo "x - y = $((x-y))"` | `x - y = 5`  | `$(( ))` is more standard and reliable        |
+
+
 ### Lesson 9 — Shell Variables (Part 1)  
-> 
+ ```bash
+hat@192:~$ echo $BASH          # Shows the path to Bash executable
+/bin/bash
+hat@192:~$ echo $HISTSIZE      # Displays the maximum number of commands stored in history
+1000
+hat@192:~$ echo $HISTFILE      # Shows the file path where command history is saved
+/home/hat/.bash_history
+hat@192:~$ echo $HOME          # Displays the home directory of current user
+/root
+hat@192:~$ HOME=/home/hat      # Assigns a new value to $HOME (temporary for current session)
+hat@192:~$ cd ~                # Changes directory to the path stored in $HOME
+hat@192:~$ set | less          # Displays all shell variables (including functions) with paging
+```
 ### Lesson 10 — Shell Variables (Part 2)  
 > 
 ### Lesson 11 — Shell Variables (Part 3)  
