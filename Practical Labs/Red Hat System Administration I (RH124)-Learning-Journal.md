@@ -331,8 +331,23 @@ man -K "print files"  # This is equivalent to using apropos "print files"
 | `find / -name passwd 1>output.txt 2>/dev/null` | `1>` and `2>`| Executes **find**. Redirects Standard Output to **output.txt** and redirects Standard Error to **/dev/null** (ignores all errors).|
 | `find / -name passwd 2>/dev/null`| `2>`| Executes **find**. Redirects only Standard Error to **/dev/null**. The Standard Output will still appear on the screen.|
 
-### Lesson 3 — Piping in Linux  
-> 
+### Lesson 3 — Piping in Linux  (XXXX | XXXX)
+```bash 
+ls -t | head -n 5                   # Show the 5 most recently modified files
+
+ls -t | head -n 5 > output.txt      # Show the 5 most recent files and save them into output.txt
+
+ls -l /etc | wc -l                  # Count number of files/directories inside /etc
+
+ls -l | grep '^-'                   # List regular files only (lines starting with '-')
+
+ls -l | grep '^d'                   # List directories only (lines starting with 'd')
+
+echo "I lovelinux" | wc             # Count lines, words, and characters in a text
+
+# piping and (( Redirection ))
+ls -lR / 2>/dev/null | wc -l        # Count all files under root (/) while ignoring permission errors
+```
 ### Lesson 4 — VIM Editor Modes  
 > 
 ### Lesson 5 — Command & Insert Modes  
