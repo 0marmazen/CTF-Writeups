@@ -352,7 +352,7 @@ ls -lR / 2>/dev/null | wc -l        # Count all files under root (/) while ignor
 >Introdution of VIM Editor Modes 
 ### Lesson 5 — Command & Insert Modes  
 
-> | **Command** | **Description**                            |
+| **Command** | **Description**                            |
 | ----------- | ------------------------------------------ |
 | `:wq`       | Save the current file **and quit** Vim.    |
 | `:x`        | Save only if changes exist, then **quit**. |
@@ -376,7 +376,8 @@ ls -lR / 2>/dev/null | wc -l        # Count all files under root (/) while ignor
 ### Lesson 7 — VIM Cheat Sheet  
 > ![Shell VIM Cheat Sheet ](../assets/RHEL/5.png)
 ### Lesson 8 — User-Defined Variables  
->| **Description**               | **Command**                                               | **Output**   | **Notes**                                     |
+>
+| **Description**               | **Command**                                               | **Output**   | **Notes**                                     |
 | ----------------------------- | --------------------------------------------------------- | ------------ | --------------------------------------------- |
 | Define variable `x`           | `x=10`                                                    | -            | No spaces around `=`                          |
 | Define variable `y`           | `y=5`                                                     | -            | Same rule for no spaces                       |
