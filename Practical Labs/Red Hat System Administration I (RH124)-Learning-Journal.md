@@ -5,7 +5,7 @@ Student: Omar Mazen
 Field: Computer Engineering — Cybersecurity  
 Goal: Documenting my progress and hands-on practice while learning RHEL 9  
 
-
+ ![Shell Shortcuts](../assets/RHEL/RHEL.png)
 
 ## CH01 — Install RHEL 9 Step by Step
 
@@ -50,27 +50,27 @@ hat@192:~$
 > ![Linux File System](../assets/RHEL/2.png)
 ### Lesson 2 — Major Directories  
 
-| **Path** | **Description**                                                                                       |
-| -------- | ----------------------------------------------------------------------------------------------------- |
+| **Path** | **Description**|
+| -------- | ---------- |
 | `/`      | Root directory, contains essential files for booting and other filesystems mounted as subdirectories. |
-| `/bin`   | Essential command binaries.                                                                           |
-| `/boot`  | Bootloader, kernel, and files needed to boot Linux.                                                   |
-| `/dev`   | Device files for accessing hardware devices.                                                          |
-| `/etc`   | Local system configuration files and installed application configs.                                   |
-| `/home`  | Users' personal directories.                                                                          |
-| `/lib`   | Shared libraries required for system boot.                                                            |
-| `/media` | Mount point for external removable media (USB, CD, etc.).                                             |
-| `/mnt`   | Temporary mount point for filesystems.                                                                |
-| `/opt`   | Optional files, like third-party tools.                                                               |
-| `/root`  | Root user's home directory.                                                                           |
-| `/sbin`  | System administration executables.                                                                    |
-| `/tmp`   | Temporary files, usually cleared on boot.                                                             |
-| `/usr`   | User applications, binaries, libraries, and man files.                                                |
-| `/var`   | Variable data like logs, emails, web files, cron jobs, etc.                                           |
+| `/bin`   | Essential command binaries.|
+| `/boot`  | Bootloader, kernel, and files needed to boot Linux.|
+| `/dev`   | Device files for accessing hardware devices.|
+| `/etc`   | Local system configuration files and installed application configs.|
+| `/home`  | Users' personal directories.|
+| `/lib`   | Shared libraries required for system boot.|
+| `/media` | Mount point for external removable media (USB, CD, etc.).|
+| `/mnt`   | Temporary mount point for filesystems.|
+| `/opt`   | Optional files, like third-party tools.|
+| `/root`  | Root user's home directory.|
+| `/sbin`  | System administration executables.|
+| `/tmp`   | Temporary files, usually cleared on boot.|
+| `/usr`   | User applications, binaries, libraries, and man files.|
+| `/var`   | Variable data like logs, emails, web files, cron jobs, etc.|
 
 ### Lesson 3 — Linux File Types  
 | **Symbol** | **Meaning**                                        |
-| ---------- | -------------------------------------------------- |
+| ---------- | --------- |
 | `-`        | Regular file|
 | `d`        | Directory|
 | `l`        | Symbolic link (shortcut)|
@@ -104,7 +104,7 @@ hat@192:~$
 | `-lS`       | Long format, **sorted by size** (largest to smallest).                                                                               |
 | `-R`        | Recursively lists **all directories and subdirectories**.                                                                            |
 | `-i`        | Displays **inode numbers** beside files and directories.                                                                             |
-| `dir`        | The dir command is similar to `ls` and can be used in Linux to list files and directories. It supports the same options as `ls`.     |
+| `dir`        | The dir command is similar to `ls` and can be used in Linux to list files and directories. It supports the same options as `ls`.    |
 | `man ls`    | Opens the **manual page** for `ls`, showing all options and details.                                                                 |
 
 > 
@@ -285,8 +285,6 @@ Linux Man Page Sections and Their Functions
 | **9**              | **Kernel routines / Linux kernel API** – Internal kernel calls, not normally used by standard users. Example: `sched_setscheduler()`.       |
 
 
-
-
 ### Lesson 3 — man Command  
 ```bash
 # MAN Page Command Examples
@@ -319,13 +317,20 @@ man -K "print files"  # This is equivalent to using apropos "print files"
 | **The Linux Documentation Project (TLDP)** | `http://tldp.org/`| General Linux guides, HOWTOs, and manuals maintained by the open-source community. |
 
 
----
-
 ## CH05 — Creating, Viewing, and Editing Text Files
 ### Lesson 1 — Intro  
->> introduction >> The goal in this chapter is"Create, view, and edit text files from command output or in a text editor
+> introduction >> The goal in this chapter is"Create, view, and edit text files from command output or in a text editor
 ### Lesson 2 — Input Output Redirection  
-> 
+>  ![Shell Output Redirection ](../assets/RHEL/3.png)
+
+| **Command**| **Redirection**| **Description**|
+| - | - | - |
+| `date 1>date.txt`| `1>`| Executes the **date** command and redirects the Standard Output (STDOUT) to a file named **date.txt**.|
+| `ls -l >/tmp/temp.txt`| `>` (same as `1>`)  | Executes **ls -l** and redirects the Standard Output to **/tmp/temp.txt**.|
+| `ejsahbakbk >error.txt`| `>` (same as `1>`)  | Tries to run a non-existent command. The error message (Standard Error) will appear on the screen because `>` redirects only STDOUT, not STDERR, so **error.txt** will remain empty. |
+| `find / -name passwd 1>output.txt 2>/dev/null` | `1>` and `2>`| Executes **find**. Redirects Standard Output to **output.txt** and redirects Standard Error to **/dev/null** (ignores all errors).|
+| `find / -name passwd 2>/dev/null`| `2>`| Executes **find**. Redirects only Standard Error to **/dev/null**. The Standard Output will still appear on the screen.|
+
 ### Lesson 3 — Piping in Linux  
 > 
 ### Lesson 4 — VIM Editor Modes  
