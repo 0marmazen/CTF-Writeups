@@ -394,28 +394,59 @@ hat@192:~$ echo $HISTSIZE      # Displays the maximum number of commands stored 
 1000
 hat@192:~$ echo $HISTFILE      # Shows the file path where command history is saved
 /home/hat/.bash_history
+```
+### Lesson 10 — Shell Variables (Part 2)  
+ ```bash
 hat@192:~$ echo $HOME          # Displays the home directory of current user
 /root
 hat@192:~$ HOME=/home/hat      # Assigns a new value to $HOME (temporary for current session)
 hat@192:~$ cd ~                # Changes directory to the path stored in $HOME
 hat@192:~$ set | less          # Displays all shell variables (including functions) with paging
 ```
-### Lesson 10 — Shell Variables (Part 2)  
-> 
 ### Lesson 11 — Shell Variables (Part 3)  
-> 
+ | Step | Command| Description|
+| ---- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| 1    | `vim DATE`| Create or edit a file named `DATE` using the `vim` editor.|
+| 2    | Inside the file, write: <br>`ls > output.txt`<br>`date>>output.txt` | `#!/bin/bash` specifies the shell, `ls > output.txt` saves the list of files, and `date >> output.txt` appends the current date to the same file. |
+| 3    | Save and exit `vim`| Press `Esc`, then type `:wq` and press Enter.|
+| 4    | `chmod +x DATE`| Make the file executable.|
+| 5    | `./DATE`| Run the file; it will create `output.txt` containing the output of `ls` and `date`.|
+| 6    | `cat output.txt`| View the content of the file to verify the commands executed successfully.|
+
 ### Lesson 12 — Set & Unset Permanent Variables  
-> 
-### Lesson 13 — Summary  
-> 
+ > Setting variables automatically
+
+ >  You can edit the Bash startup scripts.
+
+ > The exact scripts that run depend on how the shell was started, whether it is an interactive login shell, an interactive non-login shell, or a shell script.
+
+ > Assuming the default /etc/profile, /etc/bashrc, and ~/.bash_profile files, if you want to make a change to your user account that affects all your interactive shell prompts     at startup, edit your ~/.bashrc file.
 
 ---
 
 ## CH06 — Managing Local Users and Groups
 ### Lesson 1 — Intro  
-> 
+>Introduction   
 ### Lesson 2 — User Identifier (UID)  
-> 
+> There are three main types of user account: the superuser, system users, and regular users
+
+| UID Range   | User Type              | Description                                                                                             |
+| ----------- | ---------------------- | ------------------------------------------------------------------------------------------------------- |
+| **0**       | Superuser (root)       | Full administrative privileges; complete control over the system.                                       |
+| **1–200**   | System Users (Static)  | Assigned statically by Red Hat for essential system services and processes.                             |
+| **201–999** | System Users (Dynamic) | Assigned dynamically when software/packages are installed; usually do not own files on the file system. |
+| **1000+**   | Regular Users          | Range used for normal human users created by administrators or during system setup.                     |
+
+ ```bash
+
+# Command   | Description                                      |  Output (Partial)
+id           # Shows UID, GID, and groups of the current user
+uid=1000(user01) gid=1000(user01) groups=1000(user01)          #  Output (Partial)
+id user02    # Shows UID, GID, and groups of another user
+ uid=1002(user02) gid=1001(user02)                             # Output (Partial)
+
+```
+
 ### Lesson 3 — Group Identifier (GID)  
 > 
 ### Lesson 4 — SU vs SUDO Commands  
@@ -436,7 +467,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 ---
 
 ## CH07 — Controlling Access to Files
-### Lesson 1 — Intro  
+### Lesson 1 — Intro   >Introduction   
 > 
 ### Lesson 2 — File System Permissions  
 > 
@@ -474,7 +505,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 ---
 
 ## CH09 — Controlling Services and Daemons
-### Lesson 1 — Intro  
+### Lesson 1 — Intro   >Introduction   
 > 
 ### Lesson 2 — Check Service Status  
 > 
@@ -486,7 +517,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 ---
 
 ## CH10 — Configuring and Securing SSH
-### Lesson 1 — Intro  
+### Lesson 1 — Intro   >Introduction   
 > 
 ### Lesson 2 — Access Remote CLI with SSH  
 > 
@@ -500,7 +531,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 ---
 
 ## CH11 — Analyzing and Storing Logs
-### Lesson 1 — Intro  
+### Lesson 1 — Intro   >Introduction   
 > 
 ### Lesson 2 — System Log Architecture  
 > 
@@ -516,7 +547,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 ---
 
 ## CH12 — Managing Networking
-### Lesson 1 — Intro  
+### Lesson 1 — Intro   >Introduction   
 > 
 ### Lesson 2 — Validate Network Config  
 > 
@@ -532,7 +563,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 ---
 
 ## CH13 — Archiving and Transferring Files
-### Lesson 1 — Intro  
+### Lesson 1 — Intro   >Introduction   
 > 
 ### Lesson 2 — Manage Tar Archives  
 > 
@@ -544,7 +575,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 ---
 
 ## CH14 — Installing and Updating Software
-### Lesson 1 — Intro  
+### Lesson 1 — Intro   >Introduction   
 > 
 ### Lesson 2 — RPM Packages Overview  
 > 
@@ -568,7 +599,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 ---
 
 ## CH15 — Accessing Linux File Systems
-### Lesson 1 — Intro  
+### Lesson 1 — Intro   >Introduction   
 > 
 ### Lesson 2 — Examine File Systems  
 > 
