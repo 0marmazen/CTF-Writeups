@@ -461,9 +461,6 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 9 — Restrict User Access  
 > 
-### Lesson 10 — Summary  
-> 
-
 ---
 
 ## CH07 — Controlling Access to Files
@@ -481,9 +478,7 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 7 — Default File Permissions  
 > 
-### Lesson 8 — Summary  
-> 
-
+this 8+3+2+4+4+3+2+6=37
 ---
 
 ## CH08 — Monitoring and Managing Processes
@@ -499,8 +494,8 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 6 — Process Priority  
 > 
-### Lesson 7 — Summary  
-> 
+//this 8+3+2+4+4+3+2+5=31
+
 
 ---
 
@@ -511,10 +506,8 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 3 — Manage Services  
 > 
-### Lesson 4 — Summary  
-> 
-
----
+this 8+3+2+4+4+3+2=26
+ ---
 
 ## CH10 — Configuring and Securing SSH
 ### Lesson 1 — Intro   >Introduction   
@@ -525,8 +518,8 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 4 — Customize SSH Service Config  
 > 
-### Lesson 5 — Summary  
-> 
+this 8+3+2+4+4+3=24
+
 
 ---
 
@@ -541,11 +534,8 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 5 — Change Timezone  
 > 
-### Lesson 6 — Summary  
+this 8+3+2+4+4=21
 > 
-
----
-
 ## CH12 — Managing Networking
 ### Lesson 1 — Intro   >Introduction   
 > 
@@ -559,7 +549,7 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 6 — Summary  
 > 
-
+this 8+3+2+4=17
 ---
 
 ## CH13 — Archiving and Transferring Files
@@ -569,8 +559,8 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 3 — Transfer Files Securely  
 > 
-### Lesson 4 — Summary  
-> 
+this 8+3+2=13
+
 
 ---
 
@@ -593,8 +583,8 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 9 — Update/Remove Packages with YUM  
 > 
-### Lesson 10 — Summary  
-> 
+this 8+3=11
+
 
 ---
 
@@ -607,8 +597,8 @@ id user02    # Shows UID, GID, and groups of another user
 > 
 ### Lesson 4 — Search Files on Mounted FS  
 > 
-### Lesson 5 — Summary  
-> 
+
+this 3 
 ```
 
 ---
