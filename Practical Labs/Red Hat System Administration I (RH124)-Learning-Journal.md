@@ -441,7 +441,7 @@ hat@192:~$ set | less          # Displays all shell variables (including functio
 
 # Command   | Description                                      |  Output (Partial)
 id           # Shows UID, GID, and groups of the current user
-uid=1000(user01) gid=1000(user01) groups=1000(user01)          #  Output (Partial)
+ gid=1000(user01) groups=1000(user01)                          #  Output (Partial)
 id user02    # Shows UID, GID, and groups of another user
  uid=1002(user02) gid=1001(user02)                             # Output (Partial)
 
