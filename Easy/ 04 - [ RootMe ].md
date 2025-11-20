@@ -1,7 +1,9 @@
 # RootMe — TryHackMe Walkthrough
 
 **Difficulty:** Easy
+
 **Room:** RootMe (TryHackMe)
+
 **Objective:** Gain initial access → privilege escalate to root → capture flags
 
 ---
